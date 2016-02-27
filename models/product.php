@@ -1,9 +1,9 @@
 <?php
 
 class Product extends Model {
-    
+
     public $id;
-    
+
     public function __construct() {
         parent::__construct();
         $this->id = 1;
@@ -15,9 +15,9 @@ class Product extends Model {
                     . "'{$data['UnitPrice']}','{$data['Image']}','{$data['Description']}','{$data['Rate']}','{$data['RatePeople']}','{$data['Status']}')";
             $this->db->query($sql);
             $query = "select LAST_INSERT_ID() as LastPost";
-            
+
             $result = $this->db->query($query);
-            $this->id= $result[0]['LastPost'];
+            $this->id = $result[0]['LastPost'];
             return $result;
         } else {
             throw new Exception("Failed to insert product");

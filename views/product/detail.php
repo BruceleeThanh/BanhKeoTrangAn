@@ -13,7 +13,7 @@
                 <div class="product-details"><!--product-details-->
                     <div class="col-sm-5">
                         <div class="view-product">
-                            <img class="photoView" src="<?= WEBROOT_PATH?>/img/upload/<?= $this->data['item'][0]['Image'] ?>" alt="" />
+                            <img class="photoView" src="<?= WEBROOT_PATH ?>/img/upload/<?= $this->data['item'][0]['Image'] ?>" alt="" />
                             <h3>ZOOM</h3>
                         </div>
                         <div id="similar-product" class="carousel slide" data-ride="carousel">
@@ -21,19 +21,19 @@
                             <!-- Wrapper for slides -->
                             <div class="carousel-inner">
                                 <div class="item active">
-                                    <a href=""><img class="icon-slider" src="<?= WEBROOT_PATH?>/img/upload/<?= $this->data['item'][0]['Image'] ?>" alt=""></a>
-                                    <a href=""><img class="icon-slider" src="<?= WEBROOT_PATH?>/img/upload/<?= $this->data['item'][0]['Image'] ?>" alt=""></a>
-                                    <a href=""><img class="icon-slider" src="<?= WEBROOT_PATH?>/img/upload/<?= $this->data['item'][0]['Image'] ?>" alt=""></a>
+                                    <a href=""><img class="icon-slider" src="<?= WEBROOT_PATH ?>/img/upload/<?= $this->data['item'][0]['Image'] ?>" alt=""></a>
+                                    <a href=""><img class="icon-slider" src="<?= WEBROOT_PATH ?>/img/upload/<?= $this->data['item'][0]['Image'] ?>" alt=""></a>
+                                    <a href=""><img class="icon-slider" src="<?= WEBROOT_PATH ?>/img/upload/<?= $this->data['item'][0]['Image'] ?>" alt=""></a>
                                 </div>
                                 <div class="item">
-                                    <a href=""><img class="icon-slider" src="<?= WEBROOT_PATH?>/img/upload/<?= $this->data['item'][0]['Image'] ?>" alt=""></a>
-                                    <a href=""><img class="icon-slider" src="<?= WEBROOT_PATH?>/img/upload/<?= $this->data['item'][0]['Image'] ?>" alt=""></a>
-                                    <a href=""><img class="icon-slider" src="<?= WEBROOT_PATH?>/img/upload/<?= $this->data['item'][0]['Image'] ?>" alt=""></a>
+                                    <a href=""><img class="icon-slider" src="<?= WEBROOT_PATH ?>/img/upload/<?= $this->data['item'][0]['Image'] ?>" alt=""></a>
+                                    <a href=""><img class="icon-slider" src="<?= WEBROOT_PATH ?>/img/upload/<?= $this->data['item'][0]['Image'] ?>" alt=""></a>
+                                    <a href=""><img class="icon-slider" src="<?= WEBROOT_PATH ?>/img/upload/<?= $this->data['item'][0]['Image'] ?>" alt=""></a>
                                 </div>
                                 <div class="item">
-                                    <a href=""><img class="icon-slider" src="<?= WEBROOT_PATH?>/img/upload/<?= $this->data['item'][0]['Image'] ?>" alt=""></a>
-                                    <a href=""><img class="icon-slider" src="<?= WEBROOT_PATH?>/img/upload/<?= $this->data['item'][0]['Image'] ?>" alt=""></a>
-                                    <a href=""><img class="icon-slider" src="<?= WEBROOT_PATH?>/img/upload/<?= $this->data['item'][0]['Image'] ?>" alt=""></a>
+                                    <a href=""><img class="icon-slider" src="<?= WEBROOT_PATH ?>/img/upload/<?= $this->data['item'][0]['Image'] ?>" alt=""></a>
+                                    <a href=""><img class="icon-slider" src="<?= WEBROOT_PATH ?>/img/upload/<?= $this->data['item'][0]['Image'] ?>" alt=""></a>
+                                    <a href=""><img class="icon-slider" src="<?= WEBROOT_PATH ?>/img/upload/<?= $this->data['item'][0]['Image'] ?>" alt=""></a>
                                 </div>
 
                             </div>
@@ -52,16 +52,13 @@
                         <div class="product-information"><!--/product-information-->
                             <img src="<?= WEBROOT_PATH . DS ?>images/product-details/new.jpg" class="newarrival" alt="" />
                             <h2><?= $this->data['product'][0]['Name'] ?></h2>
+                            <br/>
                             <p>Web ID: <?= $this->data['product'][0]['IDProduct'] ?></p>
-                            <img src="<?= WEBROOT_PATH . DS ?>images/product-details/rating.png" alt="" />
+                            <img src="<?= WEBROOT_PATH . DS ?>images/product-details/rating.png" alt="" /><br/>
                             <span>
-                                <span>US $<?= $this->data['product'][0]['UnitPrice'] ?></span>
-                                <label>Quantity:</label>
-                                <input type="text" value="1" />
-                                <button type="button" class="btn btn-fefault cart">
-                                    <i class="fa fa-shopping-cart"></i>
-                                    Add to cart
-                                </button>
+                                <span><?= number_format($this->data['product'][0]['UnitPrice'], 0) ?> VND</span>
+                                <br/>
+                                <a href="<?= ROOT_PATH ?>en/cart/addtocart/<?= $this->data['product'][0]['IDProduct'] ?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                             </span>
                             <p><b>Availability:</b> In Stock</p>
                             <p><b>Condition:</b> New</p>
@@ -74,164 +71,19 @@
                 <div class="category-tab shop-details-tab"><!--category-tab-->
                     <div class="col-sm-12">
                         <ul class="nav nav-tabs">
-                            <li><a href="#details" data-toggle="tab">Details</a></li>
-                            <li><a href="#companyprofile" data-toggle="tab">Company Profile</a></li>
                             <li><a href="#tag" data-toggle="tab">Tag</a></li>
                             <li class="active"><a href="#reviews" data-toggle="tab">Reviews</a></li>
                         </ul>
                     </div>
                     <div class="tab-content">
-                        <div class="tab-pane fade" id="details" >
-                            <div class="col-sm-3">
-                                <div class="product-image-wrapper">
-                                    <div class="single-products">
-                                        <div class="productinfo text-center">
-                                            <img src="<?= WEBROOT_PATH . DS ?>images/home/gallery1.jpg" alt="" />
-                                            <h2>$56</h2>
-                                            <p>Easy Polo Black Edition</p>
-                                            <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="product-image-wrapper">
-                                    <div class="single-products">
-                                        <div class="productinfo text-center">
-                                            <img src="<?= WEBROOT_PATH . DS ?>images/home/gallery2.jpg" alt="" />
-                                            <h2>$56</h2>
-                                            <p>Easy Polo Black Edition</p>
-                                            <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="product-image-wrapper">
-                                    <div class="single-products">
-                                        <div class="productinfo text-center">
-                                            <img src="<?= WEBROOT_PATH . DS ?>images/home/gallery3.jpg" alt="" />
-                                            <h2>$56</h2>
-                                            <p>Easy Polo Black Edition</p>
-                                            <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="product-image-wrapper">
-                                    <div class="single-products">
-                                        <div class="productinfo text-center">
-                                            <img src="<?= WEBROOT_PATH . DS ?>images/home/gallery4.jpg" alt="" />
-                                            <h2>$56</h2>
-                                            <p>Easy Polo Black Edition</p>
-                                            <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="tab-pane fade" id="companyprofile" >
-                            <div class="col-sm-3">
-                                <div class="product-image-wrapper">
-                                    <div class="single-products">
-                                        <div class="productinfo text-center">
-                                            <img src="<?= WEBROOT_PATH . DS ?>images/home/gallery1.jpg" alt="" />
-                                            <h2>$56</h2>
-                                            <p>Easy Polo Black Edition</p>
-                                            <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="product-image-wrapper">
-                                    <div class="single-products">
-                                        <div class="productinfo text-center">
-                                            <img src="<?= WEBROOT_PATH . DS ?>images/home/gallery3.jpg" alt="" />
-                                            <h2>$56</h2>
-                                            <p>Easy Polo Black Edition</p>
-                                            <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="product-image-wrapper">
-                                    <div class="single-products">
-                                        <div class="productinfo text-center">
-                                            <img src="<?= WEBROOT_PATH . DS ?>images/home/gallery2.jpg" alt="" />
-                                            <h2>$56</h2>
-                                            <p>Easy Polo Black Edition</p>
-                                            <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="product-image-wrapper">
-                                    <div class="single-products">
-                                        <div class="productinfo text-center">
-                                            <img src="<?= WEBROOT_PATH . DS ?>images/home/gallery4.jpg" alt="" />
-                                            <h2>$56</h2>
-                                            <p>Easy Polo Black Edition</p>
-                                            <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="tab-pane fade" id="tag" >
-                            <div class="col-sm-3">
-                                <div class="product-image-wrapper">
-                                    <div class="single-products">
-                                        <div class="productinfo text-center">
-                                            <img src="<?= WEBROOT_PATH . DS ?>images/home/gallery1.jpg" alt="" />
-                                            <h2>$56</h2>
-                                            <p>Easy Polo Black Edition</p>
-                                            <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="product-image-wrapper">
-                                    <div class="single-products">
-                                        <div class="productinfo text-center">
-                                            <img src="<?= WEBROOT_PATH . DS ?>images/home/gallery2.jpg" alt="" />
-                                            <h2>$56</h2>
-                                            <p>Easy Polo Black Edition</p>
-                                            <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="product-image-wrapper">
-                                    <div class="single-products">
-                                        <div class="productinfo text-center">
-                                            <img src="<?= WEBROOT_PATH . DS ?>images/home/gallery3.jpg" alt="" />
-                                            <h2>$56</h2>
-                                            <p>Easy Polo Black Edition</p>
-                                            <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="product-image-wrapper">
-                                    <div class="single-products">
-                                        <div class="productinfo text-center">
-                                            <img src="<?= WEBROOT_PATH . DS ?>images/home/gallery4.jpg" alt="" />
-                                            <h2>$56</h2>
-                                            <p>Easy Polo Black Edition</p>
-                                            <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="tab-pane fade" id="tag"  >
+                            <?php if (isset($this->data['tag'])) { ?>
+                                <?php foreach ($this->data['tag'] as $key => $value) {
+                                    ?>
+                                    <span class="label label-default" style=" padding: 10px;">#<?= $value['Name'] ?></span>
+                                <?php } ?>
+                            <?php } ?>
                         </div>
 
                         <div class="tab-pane fade active in" id="reviews" >
@@ -265,42 +117,59 @@
                     <h2 class="title text-center">recommended items</h2>
 
                     <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
+
                         <div class="carousel-inner">
-                            <div class="item active">	
-                                <?php foreach ($this->data['recommend'] as $key => $item) {
-                                    ?>
+                            <?php for ($i = 0; $i < count($this->data['recommend']); $i++) {
+                                ?>
+                                <div <?php
+                                if ($i == 0)
+                                    echo "class='item active' ";
+                                else
+                                    echo "class='item '";
+                                ?>>	
+
                                     <div class="col-sm-4">
                                         <div class="product-image-wrapper">
                                             <div class="single-products">
                                                 <div class="productinfo text-center">
-                                                    <img class="recommend-img" src="<?= WEBROOT_PATH?>/img/upload/<?= $item['Image'] ?>" alt="" />
-                                                    <h2>$<?= $item['UnitPrice'] ?></h2>
-                                                    <p><?= $item['Name'] ?></p>
-                                                    <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> 
-                                <?php } ?>
-                            </div>
-                            <div class="item">	
-                                <?php foreach ($this->data['recommend'] as $key => $item) { ?>
-                                    <div class="col-sm-4">
-                                        <div class="product-image-wrapper">
-                                            <div class="single-products">
-                                                <div class="productinfo text-center">
-                                                    <img class="recommend-img" src="<?= WEBROOT_PATH?>/img/upload/<?= $item['Image'] ?>" alt="" />
-                                                    <h2>$<?= $item['UnitPrice'] ?></h2>
-                                                    <p><?= $item['Name'] ?></p>
-                                                    <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                                                    <img class="recommend-img" src="<?= WEBROOT_PATH ?>/img/upload/<?= $this->data['recommend'][$i]['Image'] ?>" alt="" />
+                                                    <h2>$<?= $this->data['recommend'][$i]['UnitPrice'] ?></h2>
+                                                    <p><?= $this->data['recommend'][$i]['Name'] ?></p>
+                                                    <a href="<?= ROOT_PATH ?>en/cart/addtocart/<?= $item['IDProduct'] ?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-
-                                <?php } ?>
-                            </div>
+                                    <?php $i++; ?>
+                                    <div class="col-sm-4">
+                                        <div class="product-image-wrapper">
+                                            <div class="single-products">
+                                                <div class="productinfo text-center">
+                                                    <img class="recommend-img" src="<?= WEBROOT_PATH ?>/img/upload/<?= $this->data['recommend'][$i]['Image'] ?>" alt="" />
+                                                    <h2>$<?= $this->data['recommend'][$i]['UnitPrice'] ?></h2>
+                                                    <p><?= $this->data['recommend'][$i]['Name'] ?></p>
+                                                    <a href="<?= ROOT_PATH ?>en/cart/addtocart/<?= $item['IDProduct'] ?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                    <?php $i++; ?>
+                                    <div class="col-sm-4">
+                                        <div class="product-image-wrapper">
+                                            <div class="single-products">
+                                                <div class="productinfo text-center">
+                                                    <img class="recommend-img" src="<?= WEBROOT_PATH ?>/img/upload/<?= $this->data['recommend'][$i]['Image'] ?>" alt="" />
+                                                    <h2>$<?= $this->data['recommend'][$i]['UnitPrice'] ?></h2>
+                                                    <p><?= $this->data['recommend'][$i]['Name'] ?></p>
+                                                    <a href="<?= ROOT_PATH ?>en/cart/addtocart/<?= $item['IDProduct'] ?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                </div>
+                            <?php } ?>
                         </div>
+
                         <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
                             <i class="fa fa-angle-left"></i>
                         </a>

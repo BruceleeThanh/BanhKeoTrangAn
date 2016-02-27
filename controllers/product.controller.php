@@ -85,6 +85,19 @@ class ProductController extends Controller {
         $this->data['recommend'] = $homeController->showProduct();
         $this->data['product'] = $this->model->selectBySlug($Slug);
         $this->data['item'] = $productDetail->selectByIDProduct($this->model->selectIDBySlug($Slug)[0]['IDProduct']);
+        $tagModel = new TagProduct();
+        
+        $exp = explode("-", $Slug);
+        $id = end($exp); //get last element in array
+        $tag_product = $tagModel->selectByIDProduct($id);
+       
+        if ($tag_product !== null) {
+            $tagModel = new Tag();
+            foreach ($tag_product as $key => $value) {
+                $this->data['tag'] = $tagModel->selectByIdStatus($value['IDTag'], 1);
+            }
+        }
+//         checkData($this->data['tag']);
     }
 
     public function categoryLeftbar() {
@@ -99,7 +112,7 @@ class ProductController extends Controller {
         $start = ($currentPage - 1) * $maxSize;
         $input = $this->model->selectBySlugKindOfProduct($slugKindOfProduct);
         for ($i = $start; $i < $start + $maxSize; $i++) {
-            if(isset($input[$i]))
+            if (isset($input[$i]))
                 array_push($result, $input[$i]);
         }
         return $result;
@@ -281,7 +294,7 @@ class ProductController extends Controller {
 
         $aKindOfProduct_Product = new KindOfProduct_Product();
         $this->data['listKopExist'] = $aKindOfProduct_Product->getProductNameByKind(intval($id));
-        
+
         $IDByProduct = $aTagProduct->selectByIDProduct($id);
 
         if (!empty($IDByProduct)) {
