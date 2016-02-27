@@ -22,16 +22,29 @@ class HomeController extends Controller {
         $this->data['kindofproduct'] = $this->model->showKindOfProduct();
         // cart
         $cartController = new CartController();
-        $price = $cartController->getPriceCart();
-//        echo "<pre>";
-//        print_r($_SESSION['cart']);
-//        echo "</pre>";
-//        die;
-        if (isset($price))
-            $_SESSION['price'] = $price;
+        if (isset($_SESSION['cart'])) {
+            $price = $cartController->getPriceCart();
+            if (isset($price)) {
+                $_SESSION['price'] = $price;
+            }
+        }
+
+        if(isset($_SESSION['cart_log'])){
+            $price = $cartController->getPriceCart_Log();
+            if (isset($price)) {
+                $_SESSION['price'] = $price;
+            }
+        }
+
+        // count cart by id
+        $this->data['countCart'] = $cartController->getByCartByIDUser();
+
+        if ($this->data['countCart'] == 0) {
+            $this->data['countCart'] = "";
+        }
     }
-    
-    function sliderShow(){
+
+    function sliderShow() {
         $slider = new Slider();
         return $slider->selectByStatus(1);
     }
@@ -80,7 +93,7 @@ class HomeController extends Controller {
         $product = new Product();
         return $product->selectAll_Limit(6);
     }
-    
+
     public function showProduct() {
         $product = new Product();
         return $product->selectByStatus(1);

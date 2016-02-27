@@ -38,9 +38,9 @@ class ReceiptDetail extends Model {
         return $result[0]['count'];
     }
 
-    public function paginate($page, $size) {
+    public function paginate($id,$page, $size) {
         $start = ($page - 1) * $size;
-        $sql = "select * from receiptdetail limit {$start},{$size} ";
+        $sql = "select * from receiptdetail where IDReceipt = {$id} limit {$start},{$size} ";
         return $this->db->query($sql);
     }
 

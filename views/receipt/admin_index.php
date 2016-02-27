@@ -32,6 +32,10 @@
                                 <th>STT</th>
                                 <th>IDReceipt</th>
                                 <th>IDUser</th>
+                                <th>FullName</th>
+                                <th>Address</th>
+                                <th>Email</th>
+                                <th>PhoneNumber</th>
                                 <th>ReceiptTime</th>
                                 <th>Total</th>
                                 <th>Detail</th>
@@ -47,6 +51,10 @@
                                     <td><?= $i++; ?></td>
                                     <td><?= $row['IDReceipt']; ?></td>
                                     <td><a href="<?= ADMIN_ROOT ?>/user/edit/<?= $row['IDUser'] ?>"><?= $row['IDUser']; ?></a></td>
+                                    <td><?= $row['Fullname']; ?></td>
+                                    <td><?= $row['Address']; ?></td>
+                                    <td><?= $row['Email']; ?></td>
+                                    <td><?= $row['Phonenumber']; ?></td>
                                     <td><?= $row['ReceiptTime']; ?></td>
                                     <td><?= $row['Total']; ?></td>
                                     <td><a href="<?= ADMIN_ROOT ?>/receipt/detail/<?= $row['IDReceipt']; ?>/page/1"><i class="fa fa-info"></i></a></td>

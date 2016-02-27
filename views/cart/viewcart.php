@@ -90,7 +90,6 @@
                                 </li>
 
                             </ul>
-                            <a class="btn btn-default update" href="">Update</a>
                             <a class="btn btn-default check_out" href="<?= ROOT_PATH ?>en/cart/checkout">Check Out</a>
                         </div>
                     </div>

@@ -2,10 +2,14 @@
 
 class PaymentController extends Controller {
 
+    public $cart_log;
+
     public function __construct($data = array()) {
         parent::__construct($data);
+        $this->cart_log = array();
     }
 
+    //payment session
     //payment step 2
     public function payment() {
         // display information of customer
@@ -15,45 +19,69 @@ class PaymentController extends Controller {
         $this->data['customer'] = $customer;
     }
 
+    //payment cart offical
+    public function payment_log() {
+        $cartModel = new Cart();
+        $id = Session::get("UserID");
+        $userModel = new User();
+        $customer = $userModel->selectByID($id);
+        $this->data['customer'] = $customer;
+        $this->data['cart'] = $cartModel->selectByIDUser($id);
+
+        $productModel = new Product();
+        $Price = array();
+        foreach ($this->data['cart'] as $key => $value) {
+            $UnitPrice = $productModel->selectByIDProduct($value['IDProduct']);
+            $Price[] = $value['Quantity'] * $UnitPrice[0]['UnitPrice'];
+        }
+        $getPrice = array_sum($Price);
+        $this->data['Price'] = $getPrice;
+        $_SESSION['cart_log'] = $this->data['cart'];
+
+        $_SESSION['Price_Log'] = $getPrice;
+    }
+
+    public function getCartLog() {
+        return $this->cart_log;
+    }
+
     public function creditcard() {
         // payment step 3
         // config default credit card
-        $CARD_NUMBER = "123";
-        $CV_CODE = "123";
-        $COUPON_CODE = "123";
-        $CARD_EXPIRY = "05/07";
+//        $CARD_NUMBER = "123";
+//        $CV_CODE = "123";
+//        $COUPON_CODE = "123";
+//        $CARD_EXPIRY = "05/07";
+        $r = 1;
         ////
         $Config = array(
-            'cardNumber' => $CARD_NUMBER,
-            'cardCVC' => $CV_CODE,
-            'cardExpiry' => $CARD_EXPIRY,
-            'couponCode' => $COUPON_CODE
+            'cardNumber' => CARD_NUMBER,
+            'cardCVC' => CV_CODE,
+            'cardExpiry' => CARD_EXPIRY,
+            'couponCode' => COUPON_CODE
         );
         if ($_GET) {
             $first_name = $_GET['firstname'];
             $last_name = $_GET['lastname'];
             $email = $_GET['email'];
+            $address = $_GET['address'];
             $phonenumber = $_GET['phonenumber'];
         }
 
         $data = array();
-        if ($_POST) {
+
+        if ($_POST && isset($_SESSION['cart'])) {
 
             $card_number = $_POST['cardNumber'];
             $cv_code = $_POST['cardCVC'];
             $cardExpiry = $_POST['cardExpiry'];
             $couponCode = $_POST['couponCode'];
 
-//            var_dump($card_number);
-//            var_dump($cv_code);
-//            var_dump($cardExpiry);
-//            var_dump($couponCode);
-//            die;
             // validate infor
             ////
             if (in_array($card_number, $Config) && in_array($cv_code, $Config) && in_array($cardExpiry, $Config) && in_array($couponCode, $Config)) {
                 // save receipt
-                $r = 1;
+
                 $id_user = "";
                 $total = "";
                 if (isset($_SESSION['UserID']) && isset($_SESSION['price'])) {
@@ -65,6 +93,10 @@ class PaymentController extends Controller {
                 }
                 $dataReceipt = array(
                     'IDUser' => $id_user,
+                    'Fullname' => $first_name . " " . $last_name,
+                    'Address' => $address,
+                    'Email' => $email,
+                    'Phonenumber' => $phonenumber,
                     'Total' => $total,
                     'r' => $r
                 );
@@ -83,21 +115,26 @@ class PaymentController extends Controller {
                             'Quantity' => $_SESSION['cart'][$key]['quantity'],
                         );
                         $isInsertedRD = $receiptDetailModel->insert($dataReceiptDetail, $r);
+
                         if ($isInsertedRD) {
                             // send mail confirm
                             $to = $email;
                             $name = $first_name . " " . $last_name;
                             $subject = "Banh Keo Trang An Notie";
-                            $message = "<p>Congratulation you did puschased successfully! Thank you for using our services.</p>";
+                            $message = "Congratulation you puschased successfully! Thank you for using our services.";
 
                             sendMail($to, $name, $subject, $message);
-                            
+                            $r = 5; // sent mail successful
                             // update status cart = 1 <==> paid
                             $dataCart = array(
                                 'IDCart' => $value,
                                 'Status' => 1,
                             );
-                            $cartModel->paid($dataCart, $r);
+                            if ($cartModel->paid($dataCart, $r)) {
+                                $r = 6; // paid success
+                            } else {
+                                $r = 7; // paid fail
+                            }
                         } else {
                             $r = 2; // khong them duoc hoa don chi tiet
                         }
@@ -113,6 +150,166 @@ class PaymentController extends Controller {
             } else {
                 $r = 4; // invail credit card
             }
+        } else {
+            $r = 9; // cart empty
+        }
+        // notify 
+        $this->Notify($r);
+    }
+
+    // gio hang o navbar
+    public function creditcard_log() {
+
+//        $CARD_NUMBER = "123";
+//        $CV_CODE = "123";
+//        $COUPON_CODE = "123";
+//        $CARD_EXPIRY = "05/07";
+        $r = 1;
+        ////
+        $Config = array(
+            'cardNumber' => CARD_NUMBER,
+            'cardCVC' =>    CV_CODE,
+            'cardExpiry' => CARD_EXPIRY,
+            'couponCode' => COUPON_CODE
+        );
+        if ($_GET) {
+            $first_name = $_GET['firstname'];
+            $last_name = $_GET['lastname'];
+            $email = $_GET['email'];
+            $address = $_GET['address'];
+            $phonenumber = $_GET['phonenumber'];
+        }
+
+        $data = array();
+
+        if ($_POST && isset($_SESSION['cart_log'])) {
+
+            $card_number = $_POST['cardNumber'];
+            $cv_code = $_POST['cardCVC'];
+            $cardExpiry = $_POST['cardExpiry'];
+            $couponCode = $_POST['couponCode'];
+
+            // validate infor
+            ////
+            if (in_array($card_number, $Config) && in_array($cv_code, $Config) && in_array($cardExpiry, $Config) && in_array($couponCode, $Config)) {
+                // save receipt
+
+                $id_user = "";
+                $total = "";
+                if (isset($_SESSION['UserID']) && isset($_SESSION['Price_Log'])) {
+                    $id_user = $_SESSION['UserID'];
+                    $total = $_SESSION['Price_Log'];
+                    $r = 1; //success
+                } else {
+                    $r = 0; // error
+                }
+                $dataReceipt = array(
+                    'IDUser' => $id_user,
+                    'Fullname' => $first_name . " " . $last_name,
+                    'Address' => $address,
+                    'Email' => $email,
+                    'Phonenumber' => $phonenumber,
+                    'Total' => $total,
+                    'r' => $r
+                );
+
+                $receiptModel = new Receipt();
+                $isInserted = $receiptModel->insert($dataReceipt, $r);
+                if ($isInserted) {
+                    $lastIdreceipt = $receiptModel->getLastID();
+                    // save receipt detail
+                    $receiptDetailModel = new ReceiptDetail();
+                    $cartModel = new Cart();
+                    $productModel = new Product();
+
+                    foreach ($_SESSION['CartID'] as $key => $value) {
+                        $price = $productModel->selectByIDProduct($_SESSION['cart_log'][$key]['IDProduct']);
+
+                        $dataReceiptDetail = array(
+                            'IDReceipt' => $lastIdreceipt,
+                            'IDCart' => $value,
+                            'SaleUnitPrice' => $price[0]['UnitPrice'],
+                            'Quantity' => $_SESSION['cart_log'][$key]['Quantity'],
+                        );
+
+                        $isInsertedRD = $receiptDetailModel->insert($dataReceiptDetail, $r);
+
+                        if ($isInsertedRD) {
+                            // send mail confirm
+                            $to = $email;
+                            $name = $first_name . " " . $last_name;
+                            $subject = "Banh Keo Trang An Notie";
+                            $message = "Congratulation you puschased successfully! Thank you for using our services.";
+
+                            sendMail($to, $name, $subject, $message);
+                            $r = 5; // sent mail successful
+                            // update status cart = 1 <==> paid
+                            $dataCart = array(
+                                'IDCart' => $value,
+                                'Status' => 1,
+                            );
+                            if ($cartModel->paid($dataCart, $r)) {
+                                $r = 6; // paid success
+                            } else {
+                                $r = 7; // paid fail
+                            }
+                        } else {
+                            $r = 2; // khong them duoc hoa don chi tiet
+                        }
+                    }
+                    // message
+
+                    unset($_SESSION['CartID']);
+                    if (isset($_SESSION['cart'])) {
+                        unset($_SESSION['cart']);
+                    }
+                    unset($_SESSION['cart_log']);
+                    unset($_SESSION['price']);
+                } else {
+                    $r = 3; // khong them duoc hoa don
+                }
+            } else {
+                $r = 4; // invail credit card
+            }
+        } else {
+            $r = 9; // cart empty
+        }
+        // notify 
+        $this->Notify($r);
+    }
+
+    public function Notify($r) {
+        switch ($r) {
+            case 0:
+                $this->data['notify'] = "You need to sign in to use this feauture!.";
+                break;
+            case 1:
+                $this->data['notify'] = "";
+                break;
+            case 2:
+                $this->data['notify'] = "Invaild Information.";
+                break;
+            case 3:
+                $this->data['notify'] = "Invaild Information!.";
+                break;
+            case 4:
+                $this->data['notify'] = "Your information creditcard incorrect !.";
+                break;
+            case 5:
+                $this->data['notify'] = "Sent email successfully !.";
+                break;
+            case 6:
+                $this->data['notify'] = "Payment successed! .";
+                break;
+            case 7:
+                $this->data['notify'] = "Payment failed!.";
+                break;
+            case 8:
+                $this->data['notify'] = "Cart Empty.";
+                break;
+            default:
+                $this->data['notify'] = "";
+                break;
         }
     }
 

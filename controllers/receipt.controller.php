@@ -69,7 +69,7 @@ class ReceiptController extends Controller {
 
         $this->data['totalPage'] = $totalPage;
         $this->data['paging'] = $paging;
-        $this->data['item'] = $receiptDetailModel->paginate($currentPage, $maxSize);
+        $this->data['item'] = $receiptDetailModel->paginate($idReceipt,$currentPage, $maxSize);
         $this->data['params'] = $this->params[0];
         $this->data['currentPage'] = $currentPage;
     }

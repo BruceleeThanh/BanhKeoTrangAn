@@ -9,8 +9,8 @@
                             echo "Account";
                         ?></a></li>
                 <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
-                <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-                <li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>                  
+                <li><a href="#"><i class="fa fa-crosshairs"></i> Checkout</a></li>
+                <li><a href="<?= ROOT_PATH ?>en/cart/cart_log/userid/<?= Session::get("UserID") ?>"><i class="fa fa-shopping-cart"></i> Cart <span class="badge" style="background-color: #000;"><?= isset($this->data['countCart']) ? $this->data['countCart'] : ""; ?></span></a></li>                  
                 <li><a id="modal_trigger" class="btn <?php if (Session::get("UserName")) echo "hidden"; ?>" href="#modal"><i class="fa fa-lock"></i>Login</a></li>
                 <?php if (Session::get("UserName")) echo "<li><button id='logout' class='btn flat' name='logout' onmouseover='changeColor(this);'><i class='fa fa-lock'></i>Logout</button></li>"; ?>
                 <?php

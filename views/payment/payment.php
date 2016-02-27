@@ -15,7 +15,6 @@
                 <div class="step-one">
                     <h2 class="heading">Step1>Review</h2>
                 </div>
-
                 <div class="table-responsive cart_info">
                     <table class="table table-condensed">
                         <thead>
@@ -64,7 +63,7 @@
                                     <?php
                                 }
                             }
-                            ?>
+                            ?> 
                             <tr>
                                 <td colspan="4">&nbsp;</td>
                                 <td colspan="2">
@@ -79,21 +78,25 @@
                                         </tr>
                                         <tr class="shipping-cost">
                                             <td>Shipping Cost</td>
-                                            <td>Free</td>										
+                                            <td>Free</td>
+
                                         </tr>
                                         <tr>
                                             <td>Total</td>
-                                            <td><span><?php
-                                                    $tax = 0;
-                                                    if (isset($_SESSION['price'])) {
-                                                        $price = $_SESSION['price'];
-                                                        $tax = $_SESSION['price'] * 5 / 100;
-                                                    } else {
-                                                        $price = 0;
-                                                    }
-                                                    $total = $tax + $price;
-                                                    echo number_format($total, 0) . " VND";
-                                                    ?></span></td>
+                                            <?php if (isset($_SESSION['price'])) { ?>
+                                                <td><span><?php
+                                                        $tax = 0;
+                                                        if (isset($_SESSION['price'])) {
+                                                            $price = $_SESSION['price'];
+                                                            $tax = $_SESSION['price'] * 5 / 100;
+                                                        } else {
+                                                            $price = 0;
+                                                        }
+                                                        $total = $tax + $price;
+                                                        echo number_format($total, 0) . " VND";
+                                                        ?></span></td>
+                                            <?php } ?>
+
                                         </tr>
                                     </table>
                                 </td>
@@ -147,10 +150,10 @@
                                     <div class="form-one">
                                         <form method="get">
                                             <input type="text" placeholder="Company Name">
-                                            <input type="text" onchange="changeFirstName()" name="firstname" placeholder="First Name *">
+                                            <input type="text" onchange="changeFirstName()" name="firstname" required placeholder="First Name *">
                                             <input type="text" placeholder="Middle Name">
-                                            <input type="text" onchange="changeLastName()" name="lastname"placeholder="Last Name *">
-                                            <input type="text" onchange="changeEmail()" name="email1" placeholder="Email 1 *">
+                                            <input type="text" onchange="changeLastName()" name="lastname" required placeholder="Last Name *">
+                                            <input type="text" onchange="changeEmail()" name="email1" required placeholder="Email 1 *">
                                             <input type="text" placeholder="Email 2">
                                         </form>
                                     </div>
@@ -189,7 +192,7 @@
                             <div class="col-sm-4">
                                 <div class="order-message">
                                     <p>Shipping Order</p>
-                                    <textarea name="message"  placeholder="Notes about your order, Special Notes for Delivery" rows="16"></textarea>
+                                    <textarea name="message" id="message"  placeholder="Notes about your order, Special Notes for Delivery" rows="16"></textarea>
 
                                 </div>	
                             </div>
@@ -209,7 +212,8 @@
                 var lastname = $('input[name="lastname"]').val();
                 var email = $('input[name="email1"]').val();
                 var phonenumber = $('input[name="phonenumber"]').val();
-                var data = '<?= ROOT_PATH ?>en/payment/creditcard?firstname=' + firstname + '&lastname=' + lastname + '&email=' + email + '&phonenumber=' + phonenumber;
+                var message = $('textarea#message').val();
+                var data = '<?= ROOT_PATH ?>en/payment/creditcard?firstname=' + firstname + '&lastname=' + lastname + '&email=' + email + '&phonenumber=' + phonenumber + '&address=' + message;
                 $('#link').attr('href', data);
             });
         </script>

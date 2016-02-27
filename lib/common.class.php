@@ -33,3 +33,11 @@ function sendMail($email_to, $name, $subject, $message) {
 
     mail($to, $subject, $message, $headers);
 }
+
+// for testting
+function checkData($data) {
+    echo '<pre>';
+    print_r($data);
+    echo '</pre>';
+    die;
+}

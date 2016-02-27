@@ -2,7 +2,7 @@
 
 class CartController extends Controller {
 
-    public  $CartID;
+    public $CartID;
 
     public function __construct($data = array()) {
         parent::__construct($data);
@@ -72,6 +72,16 @@ class CartController extends Controller {
         exit();
     }
 
+    public function getPriceCart_Log() {
+        $total = 0;
+        if (isset($_SESSION['cart_log'])) {
+            foreach ($_SESSION['cart_log'] as $key => $row) {
+                $total += $row['quantity'] * $row['price'];
+            }
+        }
+        return $total;
+    }
+
     public function getPriceCart() {
         $total = 0;
         if (isset($_SESSION['cart'])) {
@@ -90,13 +100,17 @@ class CartController extends Controller {
     public function deletecart() {
         $action = $this->params[0];
         $id = $this->params[1];
+
         foreach ($_SESSION['cart'] as $key => $row) {
             if ($_SESSION['cart'][$key]['id'] == $id) {
                 unset($_SESSION['cart'][$key]);
+                $_SESSION['price'] = $this->getPriceCart();
             }
         }
+        if (empty($_SESSION['cart'])) {
+            unset($_SESSION['price']);
+        }
         if ($action == "index") {
-
 
             Router::redirect(ROOT_PATH);
         } else if ($action == "viewcart") {
@@ -144,6 +158,30 @@ class CartController extends Controller {
 
     public function getCartID() {
         return $this->CartID;
+    }
+
+    public function getByCartByIDUser() {
+        if (isset($_SESSION['UserID'])) {
+            return $this->model->countByIDUser($_SESSION['UserID']);
+        } else {
+            return null;
+        }
+    }
+
+    // Cart at navbar 
+    // Store cart of user ( cart is not paid )
+    public function cart_log() {
+        $currentUser = $this->params[1];
+        $this->data['cart'] = $this->model->selectByIDUser($currentUser);
+
+        $productModel = new Product();
+        $Price = array();
+        foreach ($this->data['cart'] as $key => $value) {
+            $UnitPrice = $productModel->selectByIDProduct($value['IDProduct']);
+            $Price[] = $value['Quantity'] * $UnitPrice[0]['UnitPrice'];
+        }
+        $getPrice = array_sum($Price);
+        $this->data['Price'] = $getPrice;
     }
 
 }

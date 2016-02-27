@@ -44,3 +44,6 @@
 
                 <a href="#" class="forgot_password">Forgot password?</a>
             </div>
+            <style>
+                button.btn.btn_red{ width: 133px;height: 42px; border-radius: 4px; border: 1px solid; }
+            </style>

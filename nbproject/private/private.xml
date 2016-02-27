@@ -3,12 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/xampp/htdocs/BanhKeoTrangAn/views/payment/creditcard.php</file>
+            <file>file:/C:/xampp/htdocs/BanhKeoTrangAn/controllers/payment.controller.php</file>
             <file>file:/C:/xampp/htdocs/BanhKeoTrangAn/views/cart/viewcart.php</file>
-            <file>file:/C:/xampp/htdocs/BanhKeoTrangAn/models/product.php</file>
-            <file>file:/C:/xampp/htdocs/BanhKeoTrangAn/views/_layout/cart/cart.php</file>
+            <file>file:/C:/xampp/htdocs/BanhKeoTrangAn/models/cart.php</file>
+            <file>file:/C:/xampp/htdocs/BanhKeoTrangAn/views/cart/cart_log.php</file>
+            <file>file:/C:/xampp/htdocs/BanhKeoTrangAn/views/_layout/menubar.php</file>
             <file>file:/C:/xampp/htdocs/BanhKeoTrangAn/controllers/cart.controller.php</file>
-            <file>file:/C:/xampp/htdocs/BanhKeoTrangAn/views/_layout/header.php</file>
-            <file>file:/C:/xampp/htdocs/BanhKeoTrangAn/views/product/admin_list.php</file>
+            <file>file:/C:/xampp/htdocs/BanhKeoTrangAn/views/_layout/login.php</file>
+            <file>file:/C:/xampp/htdocs/BanhKeoTrangAn/lib/common.class.php</file>
             <file>file:/C:/xampp/htdocs/BanhKeoTrangAn/controllers/home.controller.php</file>
         </group>
     </open-files>

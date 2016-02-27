@@ -21,3 +21,10 @@ Config::set('db.password', '');
 Config::set('db.db_name', 'banhkeotrangan');
 
 Config::set('salt', 'jd7sj3sdkd964he7e');
+
+
+//card account
+define('CARD_NUMBER', '123');
+define('CV_CODE', '123');
+define('COUPON_CODE', '123');
+define('CARD_EXPIRY', '05/07');

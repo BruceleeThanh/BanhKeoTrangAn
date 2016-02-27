@@ -8,8 +8,8 @@ class Receipt extends Model {
 
     public function insert($data, $r) {
         if ($r != 0) {
-            $query = "insert into receipt (IDUser,Total) values "
-                    . "({$data['IDUser']},{$data['Total']}) ";
+            $query = "insert into receipt (IDUser,Fullname,Address,Email,Phonenumber,Total) values "
+                    . "({$data['IDUser']},'{$data['Fullname']}','{$data['Address']}','{$data['Email']}','{$data['Phonenumber']}',{$data['Total']}) ";
             return $this->db->query($query);
         } else {
             throw new Exception;
