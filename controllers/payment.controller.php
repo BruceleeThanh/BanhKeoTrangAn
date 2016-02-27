@@ -45,6 +45,7 @@ class PaymentController extends Controller {
         return $this->cart_log;
     }
 
+    // CART SESSION
     public function creditcard() {
         // payment step 3
         // config default credit card
@@ -117,6 +118,17 @@ class PaymentController extends Controller {
                         $isInsertedRD = $receiptDetailModel->insert($dataReceiptDetail, $r);
 
                         if ($isInsertedRD) {
+
+                            //update status wishlist
+                            if (Session::get('IDWishlist') !== null) {
+                                $wishlistModel = new WishList();
+                                $data = array(
+                                    'IDWishlist' => Session::get('IDWishlist'),
+                                    'Status' => 2, // da thanh toan
+                                );
+                                $isUpdate = $wishlistModel->updateStatus($data, 1);
+                            }
+
                             // send mail confirm
                             $to = $email;
                             $name = $first_name . " " . $last_name;
@@ -157,7 +169,7 @@ class PaymentController extends Controller {
         $this->Notify($r);
     }
 
-    // gio hang o navbar
+    // CART NAVBAR
     public function creditcard_log() {
 
 //        $CARD_NUMBER = "123";
@@ -168,7 +180,7 @@ class PaymentController extends Controller {
         ////
         $Config = array(
             'cardNumber' => CARD_NUMBER,
-            'cardCVC' =>    CV_CODE,
+            'cardCVC' => CV_CODE,
             'cardExpiry' => CARD_EXPIRY,
             'couponCode' => COUPON_CODE
         );

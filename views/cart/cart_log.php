@@ -26,7 +26,6 @@
                         </thead>
                         <tbody>
                             <?php
-                         
                             if (isset($this->data['cart'])) {
                                 foreach ($this->data['cart'] as $key => $row) {
                                     $id = $row['IDProduct'];
@@ -57,7 +56,7 @@
 Unpaid</span>" ?></p>
                                         </td>
                                         <td class="cart_delete">
-                                            <a type="button" onclick="return confirm('Do you want delete this cart?');" href="<?= ROOT_PATH ?>en/cart/deletecart/viewcart/<?= $row['id']; ?>" title="Remove" class="btn btn-danger btn-xs btn-delete">
+                                            <a type="button" onclick="return confirm('Do you want delete this cart?');" href="<?= ROOT_PATH ?>en/cart/deletecart_log/cart_logID/<?= $row['IDCart']; ?>" title="Remove" class="btn btn-danger btn-xs btn-delete">
                                                 <i class="fa fa-times"></i>
                                             </a>
                                         </td>
@@ -83,16 +82,16 @@ Unpaid</span>" ?></p>
                                 <li>Eco Tax <span><?= isset($this->data['Price']) ? number_format($tax = $this->data['Price'] * 5 / 100, 0) : "0" ?> VND</span></li>
                                 <li>Shipping Cost <span>Free</span></li>
                                 <li>Total <span><?php
-                                        $tax = 0;
-                                        if (isset($this->data['Price'])) {
-                                            $price = $this->data['Price'];
-                                            $tax = $this->data['Price'] * 5 / 100;
-                                        } else {
-                                            $price = 0;
-                                        }
-                                        $total = $tax + $price;
-                                        echo number_format($total, 0) . " VND";
-                                        ?></span>
+                            $tax = 0;
+                            if (isset($this->data['Price'])) {
+                                $price = $this->data['Price'];
+                                $tax = $this->data['Price'] * 5 / 100;
+                            } else {
+                                $price = 0;
+                            }
+                            $total = $tax + $price;
+                            echo number_format($total, 0) . " VND";
+                            ?></span>
                                 </li>
 
                             </ul>

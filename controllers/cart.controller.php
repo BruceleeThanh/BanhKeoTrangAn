@@ -45,6 +45,17 @@ class CartController extends Controller {
         $productModel = new Product();
         $product = $productModel->selectByIDProduct($IDProduct);
 
+        //update wishlist to added to cart
+        if (isset($this->params[1])) {
+            $wishlistModel = new WishList();
+            $data = array(
+                'IDWishlist' => $this->params[1],
+                'Status' => 1, // da them vao gio nhung chua thanh toan
+            );
+            $isUpdate = $wishlistModel->updateStatus($data, 1);
+            Session::set('IDWishlist', $this->params[1]);
+        }
+
         if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
             $count = count($_SESSION['cart']);
             $flag = FALSE;
@@ -119,6 +130,17 @@ class CartController extends Controller {
         }
     }
 
+    public function deletecart_log() {
+        $idCart_Log = $this->params[1];
+        $data = array(
+            'IDCart' => $idCart_Log,
+        );
+        $isDelete = $this->model->delete($data);
+        if ($isDelete) {
+            Router::redirect(ROOT_PATH . "en/cart/cart_log/userid/" . Session::get('UserID'));
+        }
+    }
+
     public function viewcart() {
         //code
     }
@@ -173,7 +195,14 @@ class CartController extends Controller {
     public function cart_log() {
         $currentUser = $this->params[1];
         $this->data['cart'] = $this->model->selectByIDUser($currentUser);
-
+        Session::set('count-cart', count($this->data['cart']));
+        if (Session::get('count-cart') == 0) {
+            Session::delete('count-cart');
+            Router::redirect(ROOT_PATH);
+        }
+        if (Session::get('UserID') == null) {
+            Router::redirect(ROOT_PATH);
+        }
         $productModel = new Product();
         $Price = array();
         foreach ($this->data['cart'] as $key => $value) {

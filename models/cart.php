@@ -66,11 +66,13 @@ class Cart extends Model {
         $result = $this->db->query($query);
         return $result[0]['count'];
     }
-    public function countByIDUser($id = null){
+
+    public function countByIDUser($id = null) {
         $query = "select count(*) as count from cart where IDUser = {$id} and status = 0 ";
         $result = $this->db->query($query);
         return $result[0]['count'];
     }
+
     public function paginate($page, $size) {
         $start = ($page - 1) * $size;
         $sql = "select * from cart limit {$start},{$size} ";

@@ -23,7 +23,7 @@
                 <div class="choose">
                     <ul class="nav nav-pills nav-justified">
                         <li><a href="<?= ROOT_PATH ?>en/product/detail/<?=$item['Slug']?>"><i class="fa fa-info-circle"></i>View Detail</a></li>
-                        <li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
+                        <li><a href="<?= ROOT_PATH ?>en/wishlist/additem/<?= $item['IDProduct'] ?>"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
                     </ul>
                 </div>
             </div>
