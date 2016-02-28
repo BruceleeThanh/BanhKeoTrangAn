@@ -39,7 +39,7 @@
                                 <img src="<?= WEBROOT_PATH ?>/img/upload/<?= $row['Image'] ?>" alt="" style="width: 900px;height: 450px;">
                             </a>
                             <p><?= substr($row['Content'], 0, 1000) ?></p>
-                            <a  class="btn btn-primary" href="<?=ROOT_PATH ?>en/post/detail/<?=$row['IDPost'] ?>">Read More</a>
+                            <a  class="btn btn-primary" href="<?=ROOT_PATH ?>en/post/detail/<?=$row['Slug'] ?>-<?=$row['IDPost'] ?>">Read More</a>
                         </div>
                     <?php } ?>
                     <div class="c-gray-box center">

@@ -188,6 +188,9 @@ class PostController extends Controller {
         $this->data['categoryLeftbar'] = $homeController->categoryLeftbar();
         // post detail
         $idPost = $this->params[0];
+        $exp = explode("-", $idPost);
+        $idPost = end($exp); //get last element in array
+
         $this->data['post'] = $this->model->selectByID($idPost);
         // tag post
         $tagPostController = new TagPostController();
