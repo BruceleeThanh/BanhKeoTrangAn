@@ -39,4 +39,8 @@ class TagPostController extends Controller {
         $this->data['currentPage'] = $currentPage;
     }
 
+    public function getTag($idPost) {
+        return $this->model->selectByIDPost($idPost);
+    }
+
 }

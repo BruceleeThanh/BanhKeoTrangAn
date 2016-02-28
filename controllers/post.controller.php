@@ -1,5 +1,7 @@
 <?php
 
+include_once '../models/productdetail.php';
+
 class PostController extends Controller {
 
     public function __construct($data = array()) {
@@ -78,7 +80,7 @@ class PostController extends Controller {
                     );
                     $isAddedTagPost = $aTagPost->insert($data, $r);
                 }
-                
+
                 $aCategoryPost = new CategoryPost();
                 foreach ($_POST['Categories'] as $Category) {
                     $data = array(
@@ -141,6 +143,63 @@ class PostController extends Controller {
         } else {
             Session::setFlash("unable to delete user");
         }
+    }
+
+    //
+    public function index() {
+        $homeController = new HomeController();
+        // kind of product 
+        $this->data['kindofproductLeftbar'] = $homeController->kindofproductLeftbar();
+        // category
+        $this->data['categoryLeftbar'] = $homeController->categoryLeftbar();
+        // post
+        $currentPage = $this->params[1];
+        if (!$currentPage) {
+            $currentPage = 1;
+        }
+        $maxSize = 3;
+        $maxShowPaging = 10;
+        $countPost = intval($this->model->countAllPost());
+        $totalPage = ceil($countPost / $maxSize);
+        $paging = array();
+        $i = 1;
+        if ($currentPage >= $maxShowPaging) {
+            do {
+                $i = $i + $maxShowPaging - 1;
+            } while ($i + $maxShowPaging - 1 <= $currentPage);
+        }
+        for (; $i <= $totalPage; $i++) {
+            if (count($paging) >= $maxShowPaging) {
+                break;
+            }
+            $paging[] = $i;
+        }
+        $this->data['totalPage'] = $totalPage;
+        $this->data['paging'] = $paging;
+        $this->data['lstPosts'] = $this->model->paginate($currentPage, $maxSize);
+        $this->data['currentPage'] = $currentPage;
+    }
+
+    public function detail() {
+        $homeController = new HomeController();
+        // kind of product 
+        $this->data['kindofproductLeftbar'] = $homeController->kindofproductLeftbar();
+        // category
+        $this->data['categoryLeftbar'] = $homeController->categoryLeftbar();
+        // post detail
+        $idPost = $this->params[0];
+        $this->data['post'] = $this->model->selectByID($idPost);
+        // tag post
+        $tagPostController = new TagPostController();
+        $tagPost = $tagPostController->getTag($idPost);
+        $IdTag = array();
+        foreach ($tagPost as $key => $value) {
+            $IdTag[] = $value['IDTag'];
+        }
+        $tagController = new TagController();
+        $listTagName = $tagController->getTag($IdTag);
+
+        $this->data['tag'] = $listTagName;
     }
 
 }

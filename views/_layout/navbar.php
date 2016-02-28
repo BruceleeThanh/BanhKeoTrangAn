@@ -4,17 +4,13 @@
         <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
             <ul role="menu" class="sub-menu">
                 <li><a href="<?= ROOT_PATH ?>en/product/index/page/1">Products</a></li>
-                <li><a href="<?= ROOT_PATH ?>product-details.html">Product Details</a></li> 
-                <li><a href="<?= ROOT_PATH ?>checkout.html">Checkout</a></li> 
-                <li><a href="<?= ROOT_PATH ?>cart.html">Cart</a></li> 
             </ul>
         </li> 
         <li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a>
             <ul role="menu" class="sub-menu">
-                <li><a href="blog.html">Blog List</a></li>
-                <li><a href="blog-single.html">Blog Single</a></li>
+                <li><a href="<?= ROOT_PATH ?>en/post/index/page/1">News Feed</a></li>
             </ul>
         </li> 
-        <li><a href="contact-us.html">Contact</a></li>
+        <li><a href="#">Contact</a></li>
     </ul>
 </div>

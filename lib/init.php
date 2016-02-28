@@ -17,7 +17,7 @@ function __autoload($class_name) {
     } else if (file_exists($controllers_path)) {
         require_once ($controllers_path);
     } else {
-        throw new Exception('Failed to include class: ' . $class_name);
+        Router::redirect(ROOT_PATH . "views/Error404/index");
     }
 }
 

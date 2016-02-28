@@ -163,11 +163,18 @@ class UserController extends Controller {
             echo json_encode($data);
         }
     }
-    
 
     public function admin_logout() {
         Session::destroy();
         Router::redirect(ADMIN_ROOT);
+    }
+
+    public function register($data = array(), $r = 1) {
+        return $this->model->add($data, $r);
+    }
+
+    public function login($data) {
+        return $this->model->getByLogin($data);
     }
 
 }

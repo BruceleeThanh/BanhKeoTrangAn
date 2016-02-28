@@ -1,25 +1,4 @@
- <?php
-            if ($_POST && isset($_POST['username']) && isset($_POST['password'])) {
-                $data = array();
-                $userModel = new User();
-                $user = $userModel->getByLogin($_POST['username']);
-                $hash = md5(Config::get('salt') . $_POST['password']);
-                if ($user && $user['Status'] == 0 && $hash == $user['Password']) {
-                    Session::set('UserName', $user['Name']);
-                    Session::set('UserRole', $user['Status']);
-                    Session::set('UserID', $user['IDUser']);
-                    $data = array(
-                        'id' => $user['IDUser'],
-                        'username' => $user['Name'],
-                        'status' => 'success',
-                    );
-                    // role = 1 : admin
-                    // role = 0 : member 
-                    Router::redirect(ROOT_PATH);
-                }
-                echo json_encode($data);
-            }
-            ?>
+
             <!-- Username & Password Login form -->
             <div class="user_login">
                 <form method="post" action="">

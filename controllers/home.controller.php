@@ -8,6 +8,8 @@ class HomeController extends Controller {
     }
 
     public function index() {
+        $this->register();
+        $this->login();
         // slider
         $this->data['sliderShow'] = $this->sliderShow();
         // category
@@ -28,8 +30,8 @@ class HomeController extends Controller {
                 $_SESSION['price'] = $price;
             }
         }
-
-        if(isset($_SESSION['cart_log'])){
+        $this->data['test'] = $this->register();
+        if (isset($_SESSION['cart_log'])) {
             $price = $cartController->getPriceCart_Log();
             if (isset($price)) {
                 $_SESSION['price'] = $price;
@@ -99,9 +101,54 @@ class HomeController extends Controller {
         return $product->selectByStatus(1);
     }
 
-//    public function SignIn() {
-//        
-//    }
+    public function register() {
+        if ($_POST) {
+            $username = test_input($_POST['username']);
+            $email = test_input($_POST['email']);
+            $password = test_input($_POST['password']);
+            $hash = md5(Config::get('salt') . $password);
+            $r = 1;
+            $data = array(
+                'Name' => $username,
+                'Password' => $hash,
+                'Fullname' => '',
+                'Gender' => -1,
+                'Birthday' => '',
+                'Address' => '',
+                'Email' => $email,
+                'PhoneNumber' => '',
+                'Status' => 0,
+            );
+            $userController = new UserController();
+            $isAdded = $userController->register($data, $r);
+            if ($isAdded) {
+                Router::redirect(ROOT_PATH);
+            }
+        }
+    }
+
+    public function login() {
+        if ($_POST && isset($_POST['username']) && isset($_POST['password'])) {
+            $data = array();
+            $userController = new UserController();
+            $user = $userController->login($_POST['username']);
+            $hash = md5(Config::get('salt') . $_POST['password']);
+            if ($user && $user['Status'] == 0 && $hash == $user['Password']) {
+                Session::set('UserName', $user['Name']);
+                Session::set('UserRole', $user['Status']);
+                Session::set('UserID', $user['IDUser']);
+                $data = array(
+                    'id' => $user['IDUser'],
+                    'username' => $user['Name'],
+                    'status' => 'success',
+                );
+                // role = 1 : admin
+                // role = 0 : member 
+                Router::redirect(ROOT_PATH);
+            }
+            echo json_encode($data);
+        }
+    }
 
     public function admin_index() {
         

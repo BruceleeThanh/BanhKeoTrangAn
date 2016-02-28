@@ -43,7 +43,7 @@ class TagController extends Controller {
             $Name = $_POST['Name'];
             $Slug = $_POST['Slug'];
             $Description = $_POST['Description'];
-            $Status = $_POST['Status'] == 'enable' ? 1 : 0 ;
+            $Status = $_POST['Status'] == 'enable' ? 1 : 0;
             $data = array(
                 'Name' => $Name,
                 'Slug' => $Slug,
@@ -71,7 +71,7 @@ class TagController extends Controller {
             $Name = $_POST['Name'];
             $Slug = $_POST['Slug'];
             $Description = $_POST['Description'];
-            $Status = $_POST['Status'] == 'enable' ? 1 : 0 ;
+            $Status = $_POST['Status'] == 'enable' ? 1 : 0;
             $data = array(
                 'IDTag' => $id,
                 'Name' => $Name,
@@ -96,6 +96,10 @@ class TagController extends Controller {
         } else {
             Session::setFlash("unable to delete tag");
         }
+    }
+
+    public function getTag($IDTagArray) {
+        return $this->model->selectIdInArray($IDTagArray);
     }
 
 }

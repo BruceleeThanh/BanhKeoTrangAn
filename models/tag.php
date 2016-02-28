@@ -27,6 +27,11 @@ class Tag extends Model {
         return $id[0];
     }
 
+    public function selectIdInArray($array = array()) {
+        $sql = "SELECT * FROM tag WHERE IDTag IN ('" . implode(',', array_map('intval', $array)) . "')";
+        return $this->db->query($sql);
+    }
+
     public function countAllRecord() {
         $query = "select count(*) as count from tag";
         $result = $this->db->query($query);
