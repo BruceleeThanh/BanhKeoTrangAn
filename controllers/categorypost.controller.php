@@ -6,7 +6,7 @@ class CategoryPostController extends Controller{
         $this->model = new CategoryPost();
     }
     
-    public function admin_list(){
+    public function admin_index(){
         
     }
 }

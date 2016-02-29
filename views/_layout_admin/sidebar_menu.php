@@ -74,7 +74,7 @@
     </li>
 
     <li class="active treeview" >
-        <a href="<?= ADMIN_ROOT ?>/pages/statistic">
+        <a href="<?= ADMIN_ROOT ?>/home/statistic">
             <i class="fa fa-bar-chart "></i> <span>Statistic</span> </i>
         </a>
     </li>

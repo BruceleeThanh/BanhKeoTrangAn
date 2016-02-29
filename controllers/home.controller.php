@@ -15,8 +15,14 @@ class HomeController extends Controller {
         // category
         $this->data['categoryLeftbar'] = $this->categoryLeftbar();
         $this->data['kindofproductLeftbar'] = $this->kindofproductLeftbar();
-        // list product
-        $this->data['product'] = $this->showProduct_Limit();
+        if (isset($_GET['search'])) {
+            $data = $this->search();
+            $data = json_decode($data, true);
+            $this->data['product'] = $data;
+        } else {
+            // list product
+            $this->data['product'] = $this->showProduct_Limit();
+        }
         //recommend
         $this->data['recommend'] = $this->showProduct();
 
@@ -150,8 +156,26 @@ class HomeController extends Controller {
         }
     }
 
+    public function search() {
+        if ($_GET) {
+            $data = trim($_GET['search']);
+            $productModel = new Product();
+            $product = $productModel->search($data);
+
+            return json_encode($product);
+        }
+    }
+
     public function admin_index() {
         
+    }
+
+    public function admin_statistic() {
+        $productModel = new Product();
+        $this->data['product'] = $productModel->countAllRecordEnable();
+
+        $userModel = new User();
+        $this->data['user'] = $userModel->countAllUser();
     }
 
 }

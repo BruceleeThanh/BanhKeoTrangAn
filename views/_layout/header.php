@@ -2,7 +2,19 @@
     @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic);
 
     body {font-family: 'Source Sans Pro', sans-serif; font-size: 14px; color: #666;}
+    .right-inner-addon {
+        position: relative;
+    }
 
+    .right-inner-addon input {
+        padding-right: 30px;
+    }
+    .right-inner-addon i {
+        position: absolute;
+        right: 0px;
+        padding: 10px 12px;
+        pointer-events: none;
+    }
     #lean_overlay {
         position: fixed;
         z-index:100;
@@ -153,33 +165,18 @@
                     <!-- navbar -->
                     <?php include VIEWS_PATH . '/_layout/navbar.php'; ?>
                 </div>
-                <div class="col-sm-3">
-                    <div class="search_box pull-right">
-                        <input type="text" placeholder="Search"/>
-                    </div>
-                </div>
+                <form method="get" action="<?= ROOT_PATH ?>en/home/index?search=">
+                    <div class="col-sm-3">
+                        <div class="right-inner-addon">
+                            <i class="icon-search"></i>
+                            <input type="search" name="search" class="form-control" placeholder="Search" />
+                        </div>
+                    </div><!-- /.col-sm-3 -->
+                </form>
             </div>
         </div>
     </div><!--/header-bottom-->
 </header><!--/header-->
-
-<!-- Popup signup form-->
-
-<!--<div class="modal fade">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                
-            </div>
-            <div class="modal-body">
-                
-            </div>
-            <div class="modal-footer">
-                
-            </div>
-        </div>
-    </div>
-</div>-->
 
 <form  method="post" action="">
     <div id="modal" class="popupContainer" style="display:none;">
@@ -228,32 +225,50 @@
 <script type="text/javascript" src="<?= WEBROOT_PATH ?>/js/jquery.leanModal.min.js"></script>
 
 <script type="text/javascript">
-                $("#modal_trigger").leanModal({top: 200, overlay: 0.6, closeButton: ".modal_close"});
+    $("#modal_trigger").leanModal({top: 200, overlay: 0.6, closeButton: ".modal_close"});
 
-                $(function () {
-                    // Calling Login Form
-                    $("#login_form").click(function () {
-                        $(".social_login").hide();
-                        $(".user_login").show();
-                        return true;
-                    });
+    $(function () {
+        // Calling Login Form
+        $("#login_form").click(function () {
+            $(".social_login").hide();
+            $(".user_login").show();
+            return true;
+        });
 
-                    // Calling Register Form
-                    $("#register_form").click(function () {
-                        $(".social_login").hide();
-                        $(".user_register").show();
-                        $(".header_title").text('Register');
-                        return true;
-                    });
+        // Calling Register Form
+        $("#register_form").click(function () {
+            $(".social_login").hide();
+            $(".user_register").show();
+            $(".header_title").text('Register');
+            return true;
+        });
 
-                    // Going back to Social Forms
-                    $(".back_btn").click(function () {
-                        $(".user_login").hide();
-                        $(".user_register").hide();
-                        $(".social_login").show();
-                        $(".header_title").text('Login');
-                        return true;
-                    });
+        // Going back to Social Forms
+        $(".back_btn").click(function () {
+            $(".user_login").hide();
+            $(".user_register").hide();
+            $(".social_login").show();
+            $(".header_title").text('Login');
+            return true;
+        });
 
-                })
+    })
+</script>
+
+
+<script>
+    $(document).ready(function () {
+
+        $.ajax({
+            url: "<?= ROOT_PATH ?>en/home/search",
+            data: {id: 1},
+            dataType: "json",
+            success: function (response) {
+                var data = $(response).map(function () {
+                    return {value: this.id, id: this.product_id};
+                }).get();
+            }
+        });
+
+    });
 </script>

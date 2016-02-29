@@ -87,6 +87,11 @@ class Product extends Model {
         return $this->db->query($query);
     }
 
+    public function search($Name) {
+        $query = "select * from product where Name like '%$Name%' ";
+        return $this->db->query($query);
+    }
+
     public function selectByStatus($Status) {
         $count = $this->countAllRecordEnable();
         if (((int) $count % 3) == 1) {
