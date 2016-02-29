@@ -17,13 +17,21 @@ class Post extends Model {
         $query = "select * from post ";
         return $this->db->query($query);
     }
-    public function selectByID($id){
+
+    public function selectByID($id) {
         $query = "select * from post where IDPost = '{$id}' ";
         $id = $this->db->query($query);
         return $id[0];
     }
+
     public function countAllPost() {
         $query = "select count(*) as count from post";
+        $result = $this->db->query($query);
+        return $result[0]['count'];
+    }
+
+    public function countAllPostEnable() {
+        $query = "select count(*) as count from post where Status = 1";
         $result = $this->db->query($query);
         return $result[0]['count'];
     }
@@ -38,7 +46,7 @@ class Post extends Model {
         if ($r != 0) {
             $query = "insert into post(Title,Content,Slug,Image,PostTime,Status) values ('{$data['Title']}','{$data['Content']}','{$data['Slug']}','{$data['Image']}',NOW(),{$data['Status']})";
             $this->db->query($query);
-            $query =  "select LAST_INSERT_ID() as LastPost";
+            $query = "select LAST_INSERT_ID() as LastPost";
             return $this->db->query($query);
         } else {
             throw new Exception("failed to insert post");

@@ -176,6 +176,12 @@ class HomeController extends Controller {
 
         $userModel = new User();
         $this->data['user'] = $userModel->countAllUser();
+
+        $postModel = new Post();
+        $this->data['post'] = $postModel->countAllPostEnable();
+
+        $cartModel = new Cart();
+        $this->data['cart'] = $cartModel->countAllRecordEnable();
     }
 
 }
