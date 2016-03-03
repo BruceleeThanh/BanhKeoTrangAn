@@ -30,7 +30,7 @@
                                                 <div class="single-products">
                                                     <div class="productinfo text-center">
                                                         <img src="<?= WEBROOT_PATH ?>/img/upload/<?= isset($row2['Image'])?$row2['Image']:'default.jpg' ?>" alt="" />
-                                                        <h2>$<?= $row2['UnitPrice'] ?></h2>
+                                                        <h2><?= $row2['UnitPrice'] ?> VND</h2>
                                                         <p><?= substr($row2['Description'], 0, 30) ?></p>
                                                         <a href="<?= ROOT_PATH ?>vn/cart/addtocart/<?= $item['IDProduct'] ?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ</a>
                                                     </div>

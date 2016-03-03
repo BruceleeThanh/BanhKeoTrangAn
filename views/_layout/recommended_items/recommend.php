@@ -18,7 +18,7 @@
                             <div class="single-products">
                                 <div class="productinfo text-center">
                                     <img class="recommend-img" src="<?= WEBROOT_PATH ?>/img/upload/<?= $this->data['recommend'][$i]['Image'] ?>" alt="" />
-                                    <h2>$<?= $this->data['recommend'][$i]['UnitPrice'] ?></h2>
+                                    <h2><?= $this->data['recommend'][$i]['UnitPrice'] ?> VND</h2>
                                     <p><?= $this->data['recommend'][$i]['Name'] ?></p>
                                     <a href="<?= ROOT_PATH ?>vn/cart/addtocart/<?= $item['IDProduct'] ?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ</a>
                                 </div>
@@ -31,7 +31,7 @@
                             <div class="single-products">
                                 <div class="productinfo text-center">
                                     <img class="recommend-img" src="<?= WEBROOT_PATH ?>/img/upload/<?= $this->data['recommend'][$i]['Image'] ?>" alt="" />
-                                    <h2>$<?= $this->data['recommend'][$i]['UnitPrice'] ?></h2>
+                                    <h2><?= $this->data['recommend'][$i]['UnitPrice'] ?> VND</h2>
                                     <p><?= $this->data['recommend'][$i]['Name'] ?></p>
                                     <a href="<?= ROOT_PATH ?>vn/cart/addtocart/<?= $item['IDProduct'] ?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ</a>
                                 </div>
@@ -44,7 +44,7 @@
                             <div class="single-products">
                                 <div class="productinfo text-center">
                                     <img class="recommend-img" src="<?= WEBROOT_PATH ?>/img/upload/<?= $this->data['recommend'][$i]['Image'] ?>" alt="" />
-                                    <h2>$<?= $this->data['recommend'][$i]['UnitPrice'] ?></h2>
+                                    <h2><?= $this->data['recommend'][$i]['UnitPrice'] ?> VND</h2>
                                     <p><?= $this->data['recommend'][$i]['Name'] ?></p>
                                     <a href="<?= ROOT_PATH ?>vn/cart/addtocart/<?= $item['IDProduct'] ?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ</a>
                                 </div>
