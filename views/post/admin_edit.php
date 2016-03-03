@@ -41,7 +41,7 @@
         </div>
         <div class="form-group" style="height: 100px;">
             <label for="">Image</label><br>
-            <input type="text" name="uploadedimage" class="form-control" id="fieldID" placeholder="Image" required>
+            <input type="text" name="uploadedimage" class="form-control" id="fieldID" placeholder="Image" value="<?= $this->data['post']['Image']; ?>" required>
             <a data-toggle="modal" href="javascript:;" data-target="#myModal" class="button" type="button">Select Image</a>
         </div>
         <div class="form-group">

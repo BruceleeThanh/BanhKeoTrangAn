@@ -20,8 +20,8 @@
                     <h2 class="title text-center">Tin mới</h2>
                     <?php foreach ($this->data['lstPosts'] as $key => $row) {
                         ?>
-                        <div class="single-blog-post" style="margin-top: 100px;margin-bottom: 100px;">
-                            <h3><?= $row['Title'] ?></h3>
+                        <div class="single-blog-post col-sm-4" style="margin-top: 20px; margin-bottom: 20px;">
+                            <div style="height: 60px; padding-bottom:2px"><h3><?= $row['Title'] ?></h3></div>
                             <div class="post-meta">
                                 <ul>
                                     <li><i class="fa fa-user"></i> Admin</li>
@@ -36,9 +36,9 @@
                                 </span>
                             </div>
                             <a href="">
-                                <img src="<?= WEBROOT_PATH ?>/img/upload/<?= $row['Image'] ?>" alt="" style="width: 900px;height: 450px;">
+                                <img src="<?= WEBROOT_PATH ?>/img/upload/<?= $row['Image'] ?>" alt="" style="width: 250px;height: 200px;">
                             </a>
-                            <p><?= substr($row['Content'], 0, 1000) ?></p>
+                            <p><?= substr($row['Content'], 0, 200) ?></p>
                             <a  class="btn btn-primary" href="<?=ROOT_PATH ?>vn/post/detail/<?=$row['Slug'] ?>-<?=$row['IDPost'] ?>">Chi tiết</a>
                         </div>
                     <?php } ?>
