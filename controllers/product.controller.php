@@ -184,7 +184,7 @@ class ProductController extends Controller {
         $this->data['listTag'] = $aTag->selectAll();
         $aKindOfProduct = new KindOfProduct();
         $listKop = $aKindOfProduct->selectAll();
-        $this->data['listKop'] = $this->createKindOfProductNested($listKop);
+        $this->data['listKop'] = $aKindOfProduct->selectFormalNameByStatus(1);
         $aKindOfProduct_Product = new KindOfProduct_Product();
         $data = array();
         $r = 1;
@@ -268,7 +268,7 @@ class ProductController extends Controller {
         $aTag = new Tag();
         $aKindOfProduct = new KindOfProduct();
         $listKop = $aKindOfProduct->selectAll();
-        $this->data['listKop'] = $this->createKindOfProductNested($listKop);
+        $this->data['listKop'] = $aKindOfProduct->selectFormalNameByStatus(1);
 
         $aKindOfProduct_Product = new KindOfProduct_Product();
         $this->data['listKopExist'] = $aKindOfProduct_Product->getProductNameByKind(intval($id));
@@ -436,7 +436,7 @@ class ProductController extends Controller {
         // id productdetail
         $IDProductDetail = $this->params[2];
         $this->data['ProductDetail'] = $ProductDetailModel->selectByID($IDProductDetail);
-        
+
         $data = array();
 
         $r = 1;

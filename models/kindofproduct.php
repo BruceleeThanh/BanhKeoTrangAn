@@ -36,7 +36,7 @@ class KindOfProduct extends Model {
         $query = "select * from kindofproduct where Status = {$Status}";
         return $this->db->query($query);
     }
-    
+
     public function selectBySlug($Slug) {
         $query = "select * from kindofproduct where Slug = '{$Slug}'";
         return $this->db->query($query);
@@ -81,6 +81,50 @@ class KindOfProduct extends Model {
         $start = ($page - 1) * $size;
         $sql = "select * from kindofproduct limit {$start},{$size} ";
         return $this->db->query($sql);
+    }
+
+    public function selectAncestorByIDKindOfProduct($IDKindOfProduct) {
+        $dataAncestor = array();
+        while (true) {
+            $data = $this->selectByIDKindOfProduct($IDKindOfProduct);
+            $temp = array(
+                '$IDKindOfProduct' => $data[0]['IDKindOfProduct'],
+                'Name' => $data[0]['Name']
+            );
+            array_push($dataAncestor, $temp);
+            if ($data[0]['IDKindOfProductParent'] == null) {
+                break;
+            } else {
+                $IDKindOfProduct = $data[0]['IDKindOfProductParent'];
+            }
+        }
+        return $dataAncestor;
+    }
+
+    public function processAncestorByIDKindOfProduct($IDKindOfProduct) {
+        $str = "";
+        $data = $this->selectAncestorByIDKindOfProduct($IDKindOfProduct);
+        for ($i = count($data) - 1; $i >= 0; $i--) {
+            if ($i != 0) {
+                $str = $str . $data[$i]['Name'] . " > ";
+            } else {
+                $str = $str . $data[$i]['Name'];
+            }
+        }
+        return $str;
+    }
+
+    public function selectFormalNameByStatus($Status) {
+        $data = $this->selectByStatus($Status);
+        $dataName = array();
+        foreach ($data as $temp) {
+            $dataTemp = array(
+                'IDKindOfProduct' => $temp['IDKindOfProduct'],
+                'Name' => $this->processAncestorByIDKindOfProduct($temp['IDKindOfProduct'])
+            );
+            array_push($dataName, $dataTemp);
+        }
+        return $dataName;
     }
 
     public function getIDKindOfProduct() {

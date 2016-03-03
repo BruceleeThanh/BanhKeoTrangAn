@@ -44,21 +44,21 @@
             <input type="text" name="uploadedimage" class="form-control" id="fieldID" placeholder="Image" required>
             <a data-toggle="modal" href="javascript:;" data-target="#myModal" class="button" type="button">Select Image</a>
         </div>
-         <div class="form-group">
+        <div class="form-group">
             <label for="">Tags</label><br/>
-                <?php foreach ($this->data['listTag'] as $row) {?>
+            <?php foreach ($this->data['listTag'] as $row) { ?>
                 <label class="checkbox-inline">
                     <input type="checkbox" id="inlineCheckbox" name="Tags[]" value="<?= $row['IDTag']; ?>"> <?= $row['Name']; ?>
                 </label>
-                <?php }?>
+            <?php } ?>
         </div>
-         <div class="form-group">
+        <div class="form-group">
             <label for="">Kind Of Product</label><br/>
-                <?php foreach ($this->data['listKop'] as $row) {?>
+            <?php foreach ($this->data['listKop'] as $key => $row) { ?>
                 <label class="checkbox-inline">
-                    <input type="checkbox" id="inlineCheckbox"  name="Kop[]" value="<?= $row['IDKindOfProduct']; ?>"> <?= $row['Name']; ?>
+                    <input type="checkbox" id="inlineCheckbox"  name="Kop[]" value="<?= $row['IDKindOfProduct']; ?>"> <?= $row['Name']; ?>     
                 </label>
-                <?php }?>
+            <?php } ?>
         </div>
         <div class="form-group">
             <label for="">Rate</label>
