@@ -271,8 +271,8 @@ class ProductController extends Controller {
         $this->data['listKop'] = $aKindOfProduct->selectFormalNameByStatus(1);
 
         $aKindOfProduct_Product = new KindOfProduct_Product();
-        $this->data['listKopExist'] = $aKindOfProduct_Product->getProductNameByKind(intval($id));
-
+        $this->data['listKopExist'] = $aKindOfProduct_Product->selectIDKindOfProductByIDProduct(intval($id));
+        
         $IDByProduct = $aTagProduct->selectByIDProduct($id);
 
         if (!empty($IDByProduct)) {
@@ -336,12 +336,14 @@ class ProductController extends Controller {
                     if (!$isEditTag) {
                         Session::setFlash("unable to update tag_product");
                     }
+                    
+                    $aKindOfProduct_Product->deleteByIDProduct($this->params[0]);
                     foreach ($_POST['Kop'] as $row) {
                         $data = array(
                             'IDKindOfProduct' => $row,
                             'IDProduct' => $this->params[0],
                         );
-                        $isAddedKopProduct = $aKindOfProduct_Product->update($data, $r);
+                        $isAddedKopProduct = $aKindOfProduct_Product->insert($data, $r);
                         if (!$isAddedKopProduct) {
                             Session::setFlash("unable to update kindofproduct_product");
                         }

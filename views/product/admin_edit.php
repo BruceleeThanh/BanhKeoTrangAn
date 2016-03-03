@@ -65,9 +65,10 @@
             <label for="">Kind Of Product</label><span class="red-require"><strong>*</strong></span><br><br>
             <?php foreach ($this->data['listKop'] as $row) { ?>
                 <label class="checkbox-inline">
-                    <input type="checkbox" id="inlineCheckbox"   name="Kop[]" <?php if ($this->data['listKopExist'] != null) {
-                if ($row['Name'] == $this->data['listKopExist'][0]['Name']) echo 'checked';
-            } ?> value="<?= $row['IDKindOfProduct']; ?>"> <?= isset($row['Name']) ? $row['Name'] : ""; ?>
+                    <input type="checkbox" id="inlineCheckbox" name="Kop[]" <?php if ($this->data['listKopExist'] != null) {
+                    foreach ($this->data['listKopExist'] as $row1){
+                        if ($row['IDKindOfProduct'] == $row1['IDKindOfProduct']) echo 'checked';
+                    }} ?> value="<?= $row['IDKindOfProduct']; ?>"> <?= isset($row['Name']) ? $row['Name'] : ""; ?>
                 </label>
 <?php } ?>
         </div>

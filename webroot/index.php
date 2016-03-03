@@ -11,8 +11,8 @@ define('ADMIN_ROOT', ROOT_PATH . 'admin');
 define('DEFAULT_ROOT', ROOT_PATH . 'default');
 define('INDEX', ROOT_PATH . 'en/index');
 
-define('SLIDEBAR_MENU', dirname(dirname(__FILE__)) . DS . "views\_layout_admin\sidebar_menu.php");
-define('LAYOUT_ADMIN', dirname(dirname(__FILE__)) . DS . "views\_layout_admin");
+define('SLIDEBAR_MENU', dirname(dirname(__FILE__)) . DS . "views/_layout_admin/sidebar_menu.php");
+define('LAYOUT_ADMIN', dirname(dirname(__FILE__)) . DS . "views/_layout_admin");
 
 require_once (ROOT . DS . 'lib' . DS . 'init.php');
 

@@ -24,8 +24,8 @@ class KindOfProduct_Product extends Model {
         }
     }
 
-    public function delete($id) {
-        $query = "delete from kindofproduct_product where IDKindOfProduct = '{$id}' ";
+    public function deleteByIDProduct($id) {
+        $query = "delete from kindofproduct_product where IDProduct = '{$id}' ";
         return $this->db->query($query);
     }
 
@@ -57,6 +57,15 @@ class KindOfProduct_Product extends Model {
             $query = "select * from "
                     . "(select kindofproduct.Name,kindofproduct_product.IDProduct from kindofproduct inner join kindofproduct_product on kindofproduct.IDKindOfProduct = kindofproduct_product.IDKindOfProduct)AS T "
                     . "where T.IDProduct = {$IDProduct}";
+            return $this->db->query($query);
+        } catch (Exception $ex) {
+            throw new Exception($ex->getMessage());
+        }
+    }
+    
+    public function selectIDKindOfProductByIDProduct($IDProduct) {
+        try {
+            $query = "select IDKindOfProduct from kindofproduct_product where IDProduct = {$IDProduct}";
             return $this->db->query($query);
         } catch (Exception $ex) {
             throw new Exception($ex->getMessage());
