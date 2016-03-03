@@ -39,23 +39,23 @@
                                 <img src="<?= WEBROOT_PATH ?>/img/upload/<?= $row['Image'] ?>" alt="" style="width: 250px;height: 200px;">
                             </a>
                             <p><?= substr($row['Content'], 0, 200) ?></p>
-                            <a  class="btn btn-primary" href="<?=ROOT_PATH ?>vn/post/detail/<?=$row['Slug'] ?>-<?=$row['IDPost'] ?>">Chi tiết</a>
+                            <a  class="btn btn-primary" href="<?= ROOT_PATH ?>vn/post/detail/<?= $row['Slug'] ?>-<?= $row['IDPost'] ?>">Chi tiết</a>
                         </div>
                     <?php } ?>
-                    <div class="c-gray-box center">
-                        <ul class="pagination">
-                            <li class="<?= $this->data['currentPage'] < 2 ? "hide" : "" ?>"><a href="<?= ROOT_PATH . "/post/index/page/" . ($this->data['currentPage'] - 1); ?> ">&laquo;</a></li>
-                            <?php
-                            foreach ($this->data['paging'] as $page) {
-                                echo "<li class='" . ($this->data['currentPage'] == $page ? "active" : "") . "'><a href='" . ROOT_PATH . "/post/index/page/$page" . "'>$page</a></li>";
-                            }
-                            ?>
-                            <li class="<?= $this->data['currentPage'] > $this->data['currentPage'] - 1 ? "hide" : "" ?>"><a href="<?= ROOT_PATH . "/post/index/page/" . ($this->data['currentPage'] + 1); ?>">&raquo;</a></li>
-                        </ul>
-                    </div>
+
                 </div>
             </div>
-
+            <div class="c-gray-box center">
+                <ul class="pagination">
+                    <li class="<?= $this->data['currentPage'] < 2 ? "hide" : "" ?>"><a href="<?= ROOT_PATH . "/post/index/page/" . ($this->data['currentPage'] - 1); ?> ">&laquo;</a></li>
+                    <?php
+                    foreach ($this->data['paging'] as $page) {
+                        echo "<li class='" . ($this->data['currentPage'] == $page ? "active" : "") . "'><a href='" . ROOT_PATH . "/post/index/page/$page" . "'>$page</a></li>";
+                    }
+                    ?>
+                    <li class="<?= $this->data['currentPage'] > $this->data['currentPage'] - 1 ? "hide" : "" ?>"><a href="<?= ROOT_PATH . "/post/index/page/" . ($this->data['currentPage'] + 1); ?>">&raquo;</a></li>
+                </ul>
+            </div>
         </div>
     </div>
     <?php include VIEWS_PATH . '/_layout/footer.php'; ?> 

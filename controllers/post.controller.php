@@ -50,7 +50,7 @@ class PostController extends Controller {
             $Content = $_POST['Content'];
             $Slug = $_POST['Slug'];
             $Image = $_POST['uploadedimage'];
-            
+
             $Status = $_POST['Status'] == 'enable' ? 1 : 0;
 
             $data = array(
@@ -186,6 +186,46 @@ class PostController extends Controller {
         $listTagName = $tagController->getTag($IdTag);
 
         $this->data['tag'] = $listTagName;
+    }
+
+    public function kindofpost() {
+        $slugKindOfPost = $this->params[0];
+        $exp = explode("-", $slugKindOfPost);
+        $idPost = end($exp); //get last element in array
+
+        $homeController = new HomeController();
+        // kind of product 
+        $this->data['kindofproductLeftbar'] = $homeController->kindofproductLeftbar();
+        // category
+        $this->data['categoryLeftbar'] = $homeController->categoryLeftbar();
+
+        $currentPage = $this->params[2];
+        if (!$currentPage) {
+            $currentPage = 1;
+        }
+        $maxSize = 9;
+        $maxShowPaging = 10;
+        $countRecord = intval($this->model->countAllPost_id($idPost));
+        $totalPage = ceil($countRecord / $maxSize);
+        $paging = array();
+        $i = 1;
+        if ($currentPage >= $maxShowPaging) {
+            do {
+                $i = $i + $maxShowPaging - 1;
+            } while ($i + $maxShowPaging - 1 <= $currentPage);
+        }
+        for (; $i <= $totalPage; $i++) {
+            if (count($paging) >= $maxShowPaging) {
+                break;
+            }
+            $paging[] = $i;
+        }
+
+        $this->data['slugPage'] = $slugKindOfPost;
+        $this->data['totalPage'] = $totalPage;
+        $this->data['paging'] = $paging;
+        $this->data['lstPosts'] = $this->model->paginate_id($idPost, $currentPage, $maxSize);
+        $this->data['currentPage'] = $currentPage;
     }
 
 }

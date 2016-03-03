@@ -3,6 +3,7 @@
 <div class="panel-group category-products" id="accordian2">
     <div class="panel panel-default">
         <?php
+        
         foreach ($this->data['categoryLeftbar'] as $item) {
             ?>
             <div class="panel-heading">
@@ -17,7 +18,7 @@
                 <div class="panel-body">
                     <ul>
                         <?php foreach ($item['children'] as $row) { ?>
-                            <li><a href=""><?= $row['Name']; ?></a></li>  
+                            <li><a href="<?= ROOT_PATH?>vn/post/kindofpost/<?= $row['Slug']?>-<?=$row['IDCategory'] ?>/page/1"><?= $row['Name']; ?></a></li>
                         <?php } ?>
                     </ul>
                 </div>

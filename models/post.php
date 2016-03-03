@@ -30,6 +30,12 @@ class Post extends Model {
         return $result[0]['count'];
     }
 
+    public function countAllPost_id($id) {
+        $query = "select count(*) as count from post where IDPost = '{$id}'";
+        $result = $this->db->query($query);
+        return $result[0]['count'];
+    }
+
     public function countAllPostEnable() {
         $query = "select count(*) as count from post where Status = 1";
         $result = $this->db->query($query);
@@ -39,6 +45,12 @@ class Post extends Model {
     public function paginate($page, $size) {
         $start = ($page - 1) * $size;
         $sql = "select * from post limit {$start},{$size} ";
+        return $this->db->query($sql);
+    }
+
+    public function paginate_id($id, $page, $size) {
+        $start = ($page - 1) * $size;
+        $sql = "select * from post where IDPost = '{$id}'  limit {$start},{$size} ";
         return $this->db->query($sql);
     }
 
