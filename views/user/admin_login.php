@@ -1,6 +1,6 @@
 
 
-<title>AdminLTE 2 | Log in</title>
+<title>Management | Bánh kẹo Tràng An</title>
 
 <style>
     .login-page,.register-page {
@@ -11,10 +11,10 @@
     }
 </style>
 
-<div class="hold-transition login-page" center>
+<div class="hold-transition login-page" style="margin-left: -20%;">
     <div id="loginform" class="login-box">
         <div class="login-logo">
-            <a href="#"><b>Admin</b>LTE</a>
+            <a href="#"><b>Bánh kẹo</b> TRÀNG AN</a>
         </div><!-- /.login-logo -->
         <div class="login-box-body">
             <p class="login-box-msg">Sign in to start your session</p>
@@ -27,7 +27,7 @@
                     <input type="password" class="form-control" name="password" placeholder="Password">
                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                 </div>
-                <div class="col-xs-6">
+                <div class="col-xs-6" style="margin-left: 25%;">
                     <button type="submit" name="submit" id="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
                 </div><!-- /.col -->
                 <div class="col-xs-6">
@@ -45,13 +45,6 @@
 
                 </div>
             </form>
-           
-            
-            <div class="social-auth-links text-center">
-                <p>- OR -</p>
-                <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign in using Facebook</a>
-                <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign in using Google+</a>
-            </div><!-- /.social-auth-links -->
 
             <a href="#">I forgot my password</a><br>
             <a href="<?= ROOT_PATH ?>/views/user/resgiter.php" class="text-center">Register a new membership</a>

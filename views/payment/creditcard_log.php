@@ -53,7 +53,7 @@
                                             type="tel"
                                             class="form-control"
                                             name="cardNumber"
-                                            placeholder="Valid Card Number"
+                                            placeholder="Nhập mã thẻ"
                                             autocomplete="cc-number"
                                             required autofocus 
                                             />

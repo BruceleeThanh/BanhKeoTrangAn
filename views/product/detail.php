@@ -98,8 +98,8 @@
 
                                 <form action="#">
                                     <span>
-                                        <input style="background-color: white;" type="text" placeholder="Your Name"/>
-                                        <input style="background-color: white;" type="email" placeholder="Email Address"/>
+                                        <input style="background-color: white;" type="text" placeholder="Tên"/>
+                                        <input style="background-color: white;" type="email" placeholder="Địa chỉ email"/>
                                     </span>
                                     <textarea name="text-comment" style="background-color: white;"></textarea>
                                     <b>Đánh giá: </b> <img src="<?= WEBROOT_PATH . DS ?>images/product-details/rating.png" alt="" />

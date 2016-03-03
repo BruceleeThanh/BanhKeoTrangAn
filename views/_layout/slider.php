@@ -32,6 +32,7 @@
                     <div class="carousel-inner">
                         <?php
                         $i = 0;
+                        $flag=true;
                         foreach ($this->data['sliderShow'] as $row) {
                             ?>
                             <div class="item <?php
@@ -48,7 +49,11 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <img  class="slider-image" src="<?= WEBROOT_PATH?>/img/upload/<?= $row['Image'] ?>" class="girl img-responsive" alt="" />
-                                    <img src="<?= WEBROOT_PATH?>/img/logo/sale.png" class="pricing" alt="" style="margin-top: -232px; margin-right: -207px;"/>
+                                    <?php if($flag) { $flag = false;?>
+                                        <img src="<?= WEBROOT_PATH?>/img/logo/sale.png" class="pricing" alt="" style="margin-top: -232px; margin-right: -207px;"/>
+                                    <?php } else { $flag = true;?>
+                                        <img src="<?= WEBROOT_PATH?>/img/logo/new.png" class="pricing" alt="" style="margin-top: -232px; margin-right: -207px;"/>
+                                    <?php }?>
                                 </div>
                             </div>
                         <?php } ?>

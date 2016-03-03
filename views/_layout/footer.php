@@ -110,11 +110,11 @@
                             <div class="single-widget">
                                 <h2>Thông tin chung</h2>
                                 <ul class="nav nav-pills nav-stacked">
-                                    <li><a href="#">Thông tin công ty</a></li>
-                                    <li><a href="#">Tuyển dụng</a></li>
-                                    <li><a href="#">Kho hàng</a></li>
-                                    <li><a href="#">Chi nhánh</a></li>
-                                    <li><a href="#">Bản quyền</a></li>
+                                    <li><a href="<?= ROOT_PATH ?>vn/information/contactus">Thông tin công ty</a></li>
+                                    <li><a href="<?= ROOT_PATH ?>vn/information/contactus">Tuyển dụng</a></li>
+                                    <li><a href="<?= ROOT_PATH ?>vn/information/contactus">Kho hàng</a></li>
+                                    <li><a href="<?= ROOT_PATH ?>vn/information/contactus">Chi nhánh</a></li>
+                                    <li><a href="<?= ROOT_PATH ?>vn/information/contactus">Bản quyền</a></li>
                                 </ul>
                             </div>
                         </div>

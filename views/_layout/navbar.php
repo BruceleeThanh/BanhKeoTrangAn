@@ -11,6 +11,6 @@
                 <li><a href="<?= ROOT_PATH ?>vn/post/index/page/1">Tin tức</a></li>
             </ul>
         </li> 
-        <li><a href="#">Liên hệ</a></li>
+        <li><a href="<?= ROOT_PATH ?>vn/information/contactus">Liên hệ</a></li>
     </ul>
 </div>
