@@ -140,7 +140,7 @@
                                             echo 'PhoneNumber';
                                         ?>">
                                     </form>
-                                    <a class="btn btn-primary" href="#">Nhận báo giá</a>
+                                    
                                     <button class="btn-con" type="submit" name="continue" id="btn1"   value="continue"><a class="btn btn-primary" id="link" href="<?= ROOT_PATH ?>vn/payment/creditcard_log">Thanh toán</a></button>
                                 </div>
                             </div>

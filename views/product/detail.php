@@ -21,19 +21,19 @@
                             <!-- Wrapper for slides -->
                             <div class="carousel-inner">
                                 <div class="item active">
-                                    <a href=""><img class="icon-slider" src="<?= WEBROOT_PATH ?>/img/upload/<?= $this->data['item'][0]['Image'] ?>" alt=""></a>
-                                    <a href=""><img class="icon-slider" src="<?= WEBROOT_PATH ?>/img/upload/<?= $this->data['item'][0]['Image'] ?>" alt=""></a>
-                                    <a href=""><img class="icon-slider" src="<?= WEBROOT_PATH ?>/img/upload/<?= $this->data['item'][0]['Image'] ?>" alt=""></a>
+                                    <a href=""><img class="icon-slider" src="<?= WEBROOT_PATH ?>/img/upload/<?= isset($this->data['item'][0]['Image']) ? $this->data['item'][0]['Image'] : "default.jpg" ?>" alt=""></a>
+                                    <a href=""><img class="icon-slider" src="<?= WEBROOT_PATH ?>/img/upload/<?= isset($this->data['item'][1]['Image']) ? $this->data['item'][1]['Image'] : "default.jpg" ?>" alt=""></a>
+                                    <a href=""><img class="icon-slider" src="<?= WEBROOT_PATH ?>/img/upload/<?= isset($this->data['item'][2]['Image']) ? $this->data['item'][2]['Image'] : "default.jpg" ?>" alt=""></a>
                                 </div>
                                 <div class="item">
-                                    <a href=""><img class="icon-slider" src="<?= WEBROOT_PATH ?>/img/upload/<?= $this->data['item'][0]['Image'] ?>" alt=""></a>
-                                    <a href=""><img class="icon-slider" src="<?= WEBROOT_PATH ?>/img/upload/<?= $this->data['item'][0]['Image'] ?>" alt=""></a>
-                                    <a href=""><img class="icon-slider" src="<?= WEBROOT_PATH ?>/img/upload/<?= $this->data['item'][0]['Image'] ?>" alt=""></a>
+                                    <a href=""><img class="icon-slider" src="<?= WEBROOT_PATH ?>/img/upload/<?= isset($this->data['item'][2]['Image']) ? $this->data['item'][2]['Image'] : "default.jpg" ?>" alt=""></a>
+                                    <a href=""><img class="icon-slider" src="<?= WEBROOT_PATH ?>/img/upload/<?= isset($this->data['item'][0]['Image']) ? $this->data['item'][0]['Image'] : "default.jpg" ?>" alt=""></a>
+                                    <a href=""><img class="icon-slider" src="<?= WEBROOT_PATH ?>/img/upload/<?= isset($this->data['item'][1]['Image']) ? $this->data['item'][1]['Image'] : "default.jpg" ?>" alt=""></a>
                                 </div>
                                 <div class="item">
-                                    <a href=""><img class="icon-slider" src="<?= WEBROOT_PATH ?>/img/upload/<?= $this->data['item'][0]['Image'] ?>" alt=""></a>
-                                    <a href=""><img class="icon-slider" src="<?= WEBROOT_PATH ?>/img/upload/<?= $this->data['item'][0]['Image'] ?>" alt=""></a>
-                                    <a href=""><img class="icon-slider" src="<?= WEBROOT_PATH ?>/img/upload/<?= $this->data['item'][0]['Image'] ?>" alt=""></a>
+                                    <a href=""><img class="icon-slider" src="<?= WEBROOT_PATH ?>/img/upload/<?= isset($this->data['item'][1]['Image']) ? $this->data['item'][1]['Image'] : "default.jpg" ?>" alt=""></a>
+                                    <a href=""><img class="icon-slider" src="<?= WEBROOT_PATH ?>/img/upload/<?= isset($this->data['item'][0]['Image']) ? $this->data['item'][0]['Image'] : "default.jpg" ?>" alt=""></a>
+                                    <a href=""><img class="icon-slider" src="<?= WEBROOT_PATH ?>/img/upload/<?= isset($this->data['item'][2]['Image']) ? $this->data['item'][2]['Image'] : "default.jpg" ?>" alt=""></a>
                                 </div>
 
                             </div>
@@ -135,7 +135,7 @@
                                                     <img class="recommend-img" src="<?= WEBROOT_PATH ?>/img/upload/<?= $this->data['recommend'][$i]['Image'] ?>" alt="" />
                                                     <h2>$<?= $this->data['recommend'][$i]['UnitPrice'] ?></h2>
                                                     <p><?= $this->data['recommend'][$i]['Name'] ?></p>
-                                                    <a href="<?= ROOT_PATH ?>vn/cart/addtocart/<?= $item['IDProduct'] ?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ</a>
+                                                    <a href="<?= ROOT_PATH ?>vn/cart/addtocart/<?= $this->data['recommend'][$i]['IDProduct'] ?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -148,7 +148,7 @@
                                                     <img class="recommend-img" src="<?= WEBROOT_PATH ?>/img/upload/<?= $this->data['recommend'][$i]['Image'] ?>" alt="" />
                                                     <h2>$<?= $this->data['recommend'][$i]['UnitPrice'] ?></h2>
                                                     <p><?= $this->data['recommend'][$i]['Name'] ?></p>
-                                                    <a href="<?= ROOT_PATH ?>vn/cart/addtocart/<?= $item['IDProduct'] ?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ</a>
+                                                    <a href="<?= ROOT_PATH ?>vn/cart/addtocart/<?= $this->data['recommend'][$i]['IDProduct'] ?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -161,7 +161,7 @@
                                                     <img class="recommend-img" src="<?= WEBROOT_PATH ?>/img/upload/<?= $this->data['recommend'][$i]['Image'] ?>" alt="" />
                                                     <h2>$<?= $this->data['recommend'][$i]['UnitPrice'] ?></h2>
                                                     <p><?= $this->data['recommend'][$i]['Name'] ?></p>
-                                                    <a href="<?= ROOT_PATH ?>vn/cart/addtocart/<?= $item['IDProduct'] ?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ</a>
+                                                    <a href="<?= ROOT_PATH ?>vn/cart/addtocart/<?= $this->data['recommend'][$i]['IDProduct'] ?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ</a>
                                                 </div>
                                             </div>
                                         </div>
