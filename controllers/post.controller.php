@@ -49,16 +49,8 @@ class PostController extends Controller {
             $Title = $_POST['Title'];
             $Content = $_POST['Content'];
             $Slug = $_POST['Slug'];
-            $Image = '';
-            if (!empty($_FILES["uploadedimage"]["name"])) {
-                $file_name = $_FILES["uploadedimage"]["name"];
-                $temp_name = $_FILES["uploadedimage"]["tmp_name"];
-                $imgtype = $_FILES["uploadedimage"]["type"];
-                $target_path = "./img/upload/";
-                $file_path = "./img/upload/" . $file_name;
-                move_uploaded_file($temp_name, $file_path);
-                $Image = $file_name;
-            }
+            $Image = $_POST['uploadedimage'];
+            
             $Status = $_POST['Status'] == 'enable' ? 1 : 0;
 
             $data = array(
@@ -106,16 +98,7 @@ class PostController extends Controller {
             $Title = $_POST['Title'];
             $Content = $_POST['Content'];
             $Slug = $_POST['Slug'];
-            $Image = $post['Image'];
-            if (!empty($_FILES["uploadedimage"]["name"])) {
-                $file_name = $_FILES["uploadedimage"]["name"];
-                $temp_name = $_FILES["uploadedimage"]["tmp_name"];
-                $imgtype = $_FILES["uploadedimage"]["type"];
-                $target_path = "./img/upload/";
-                $file_path = "./img/upload/" . $file_name;
-                move_uploaded_file($temp_name, $file_path);
-                $Image = $file_name;
-            }
+            $Image = $_POST['uploadedimage'];
             $Status = $_POST['Status'] == 'enable' ? 1 : 0;
 
             $data = array(
