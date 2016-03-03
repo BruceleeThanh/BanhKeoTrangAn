@@ -7,21 +7,21 @@
             <div class="container">
                 <div class="breadcrumbs">
                     <ol class="breadcrumb">
-                        <li><a href="#">Home</a></li>
-                        <li class="active">Shopping Cart</li>
+                        <li><a href="#">Trang chủ</a></li>
+                        <li class="active">Giỏ hàng</li>
                     </ol>
                 </div>
                 <div class="table-responsive cart_info">
                     <table class="table table-condensed">
                         <thead>
                             <tr class="cart_menu">
-                                <td class="image">Item</td>
-                                <td class="description">Description</td>
-                                <td class="price">Price</td>
-                                <td class="quantity">Quantity</td>
-                                <td class="total">Total</td>
-                                <td>Status</td>
-                                <td>Action</td>
+                                <td class="image">Sản phẩm</td>
+                                <td class="description">Mô tả</td>
+                                <td class="price">Đơn giá</td>
+                                <td class="quantity">Số lượng</td>
+                                <td class="total">Thành tiền</td>
+                                <td>Trạng thái</td>
+                                <td>Hành động</td>
                             </tr>
                         </thead>
                         <tbody>
@@ -52,11 +52,10 @@
                                             <p class="cart_total_price"><?= number_format($product[0]['UnitPrice'] * $row['Quantity'], 0) ?> VND</p>
                                         </td>
                                         <td class="cart_total">
-                                            <p class="cart_total_price"><?= $row['Status'] == 1 ? "<span class='label label-success'>Paid</span>" : "<span class='label label-default'>
-Unpaid</span>" ?></p>
+                                            <p class="cart_total_price"><?= $row['Status'] == 1 ? "<span class='label label-success'>Đã thanh toán</span>" : "<span class='label label-default'>Chưa thanh toán</span>" ?></p>
                                         </td>
                                         <td class="cart_delete">
-                                            <a type="button" onclick="return confirm('Do you want delete this cart?');" href="<?= ROOT_PATH ?>en/cart/deletecart_log/cart_logID/<?= $row['IDCart']; ?>" title="Remove" class="btn btn-danger btn-xs btn-delete">
+                                            <a type="button" onclick="return confirm('Bạn có muốn xoá sản phẩm này khỏi giỏ hàng?');" href="<?= ROOT_PATH ?>vn/cart/deletecart_log/cart_logID/<?= $row['IDCart']; ?>" title="Xoá" class="btn btn-danger btn-xs btn-delete">
                                                 <i class="fa fa-times"></i>
                                             </a>
                                         </td>
@@ -78,10 +77,10 @@ Unpaid</span>" ?></p>
                         <div class="total_area">                   
                             <ul>
 
-                                <li>Cart Sub Total <span><?= isset($this->data['Price']) ? number_format($this->data['Price'], 0) : "0" ?> VND</span></li>
-                                <li>Eco Tax <span><?= isset($this->data['Price']) ? number_format($tax = $this->data['Price'] * 5 / 100, 0) : "0" ?> VND</span></li>
-                                <li>Shipping Cost <span>Free</span></li>
-                                <li>Total <span><?php
+                                <li>Trước thuế <span><?= isset($this->data['Price']) ? number_format($this->data['Price'], 0) : "0" ?> VND</span></li>
+                                <li>Thuế <span><?= isset($this->data['Price']) ? number_format($tax = $this->data['Price'] * 5 / 100, 0) : "0" ?> VND</span></li>
+                                <li>Phí giao hàng <span>Miễn phí</span></li>
+                                <li>Tổng <span><?php
                             $tax = 0;
                             if (isset($this->data['Price'])) {
                                 $price = $this->data['Price'];
@@ -95,7 +94,7 @@ Unpaid</span>" ?></p>
                                 </li>
 
                             </ul>
-                            <a class="btn btn-default check_out" href="<?= ROOT_PATH ?>en/payment/payment_log">Payment</a>
+                            <a class="btn btn-default check_out" href="<?= ROOT_PATH ?>vn/payment/payment_log">Payment</a>
                         </div>
                     </div>
                 </div>

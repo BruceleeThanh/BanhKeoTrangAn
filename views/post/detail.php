@@ -18,7 +18,7 @@
 
             <div class="col-sm-9">
                 <div class="blog-post-area">
-                    <h2 class="title text-center">Banh Keo Trang An Blog</h2>
+                    <h2 class="title text-center">Tin tức</h2>
                     <div class="single-blog-post">
                         <h3><?= $this->data['post']['Title'] ?></h3>
                         <div class="post-meta">
@@ -40,8 +40,8 @@
                         <p><?= $this->data['post']['Content'] ?></p>
                         <div class="pager-area">
                             <ul class="pager pull-right">
-                                <li><a href="#">Pre</a></li>
-                                <li><a href="#">Next</a></li>
+                                <li><a href="#">Trước</a></li>
+                                <li><a href="#">Tiếp</a></li>
                             </ul>
                         </div>
                     </div>
@@ -49,7 +49,7 @@
 
                 <div class="rating-area">
                     <ul class="ratings">
-                        <li class="rate-this">Rate this item:</li>
+                        <li class="rate-this">Đánh giá:</li>
                         <li>
                             <i class="fa fa-star color"></i>
                             <i class="fa fa-star color"></i>
@@ -57,7 +57,7 @@
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                         </li>
-                        <li class="color">(6 votes)</li>
+                        <li class="color">(6 đánh giá)</li>
                     </ul>
                     <ul class="tag">
                         <li>TAG:</li>
@@ -86,12 +86,12 @@
                                 <li><a href=""><i class="fa fa-dribbble"></i></a></li>
                                 <li><a href=""><i class="fa fa-google-plus"></i></a></li>
                             </ul>
-                            <a class="btn btn-primary" href="">Other Posts</a>
+                            <a class="btn btn-primary" href="">Tin khác</a>
                         </div>
                     </div>
                 </div><!--Comments-->
                 <div class="response-area">
-                    <h2>3 RESPONSES</h2>
+                    <h2>3 Câu trả lời</h2>
                     <ul class="media-list">
                         <li class="media">
 
@@ -102,10 +102,10 @@
                                 <ul class="sinlge-post-meta">
                                     <li><i class="fa fa-user"></i>Janis Gallagher</li>
                                     <li><i class="fa fa-clock-o"></i> 1:33 pm</li>
-                                    <li><i class="fa fa-calendar"></i> DEC 5, 2013</li>
+                                    <li><i class="fa fa-calendar"></i> MAR 5, 2016</li>
                                 </ul>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                <a class="btn btn-primary" href=""><i class="fa fa-reply"></i>Replay</a>
+                                <a class="btn btn-primary" href=""><i class="fa fa-reply"></i>Trả lời</a>
                             </div>
                         </li>
                         <li class="media second-media">
@@ -116,10 +116,10 @@
                                 <ul class="sinlge-post-meta">
                                     <li><i class="fa fa-user"></i>Janis Gallagher</li>
                                     <li><i class="fa fa-clock-o"></i> 1:33 pm</li>
-                                    <li><i class="fa fa-calendar"></i> DEC 5, 2013</li>
+                                    <li><i class="fa fa-calendar"></i> FEB 29, 2016</li>
                                 </ul>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                <a class="btn btn-primary" href=""><i class="fa fa-reply"></i>Replay</a>
+                                <a class="btn btn-primary" href=""><i class="fa fa-reply"></i>Trả lời</a>
                             </div>
                         </li>
                         <li class="media">
@@ -130,10 +130,10 @@
                                 <ul class="sinlge-post-meta">
                                     <li><i class="fa fa-user"></i>Janis Gallagher</li>
                                     <li><i class="fa fa-clock-o"></i> 1:33 pm</li>
-                                    <li><i class="fa fa-calendar"></i> DEC 5, 2013</li>
+                                    <li><i class="fa fa-calendar"></i> FEB 20, 2016</li>
                                 </ul>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                <a class="btn btn-primary" href=""><i class="fa fa-reply"></i>Replay</a>
+                                <a class="btn btn-primary" href=""><i class="fa fa-reply"></i>Trả lời</a>
                             </div>
                         </li>
                     </ul>					
@@ -141,32 +141,32 @@
                 <div class="replay-box">
                     <div class="row">
                         <div class="col-sm-4">
-                            <h2>Leave a replay</h2>
+                            <h2>Bình luận</h2>
                             <form>
                                 <div class="blank-arrow">
-                                    <label>Your Name</label>
+                                    <label>Tên</label>
                                 </div>
                                 <span>*</span>
-                                <input type="text" placeholder="write your name...">
+                                <input type="text" placeholder="Họ tên">
                                 <div class="blank-arrow">
-                                    <label>Email Address</label>
+                                    <label>Email</label>
                                 </div>
                                 <span>*</span>
-                                <input type="email" placeholder="your email address...">
+                                <input type="email" placeholder="Địa chỉ email">
                                 <div class="blank-arrow">
-                                    <label>Web Site</label>
+                                    <label>Địa chỉ</label>
                                 </div>
-                                <input type="email" placeholder="current city...">
+                                <input type="email" placeholder="Địa chỉ">
                             </form>
                         </div>
                         <div class="col-sm-8">
                             <div class="text-area">
                                 <div class="blank-arrow">
-                                    <label>Your Name</label>
+                                    <label>Tên</label>
                                 </div>
                                 <span>*</span>
                                 <textarea name="message" rows="11"></textarea>
-                                <a class="btn btn-primary" href="">post comment</a>
+                                <a class="btn btn-primary" href="">Đăng</a>
                             </div>
                         </div>
                     </div>

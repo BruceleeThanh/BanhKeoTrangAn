@@ -19,7 +19,7 @@ class DB {
 
         $result = $this->connection->query($sql);
         if (mysqli_error($this->connection)) {
-            throw new Exception(mysqli_error($this->connection));
+            Router::redirect(ROOT_PATH . "views/Error404/index");
         }
 
         if (is_bool($result)) {

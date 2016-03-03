@@ -32,7 +32,7 @@
                                                         <img src="<?= WEBROOT_PATH ?>/img/upload/<?= isset($row2['Image'])?$row2['Image']:'default.jpg' ?>" alt="" />
                                                         <h2>$<?= $row2['UnitPrice'] ?></h2>
                                                         <p><?= substr($row2['Description'], 0, 30) ?></p>
-                                                        <a href="<?= ROOT_PATH ?>en/cart/addtocart/<?= $item['IDProduct'] ?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                                        <a href="<?= ROOT_PATH ?>vn/cart/addtocart/<?= $item['IDProduct'] ?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -44,9 +44,9 @@
                                         echo " <div class='single-products'>";
                                         echo "<div class='productinfo text-center'>";
                                         echo "<img src='<?= WEBROOT_PATH ?>/img/upload/default.jpg' alt='' />";
-                                        echo "<h2>No Price</h2>";
-                                        echo "<p>No Description</p>";
-                                        echo "<a href='#' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Add to cart</a>";
+                                        echo "<h2>Không có giá</h2>";
+                                        echo "<p>Không có miêu tả</p>";
+                                        echo "<a href='#' class='btn btn-default add-to-cart'><i class='fa fa-shopping-cart'></i>Thêm vào giỏ</a>";
                                         echo "</div>";
                                         echo "</div>";
                                         echo "</div>";

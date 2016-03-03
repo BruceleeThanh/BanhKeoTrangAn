@@ -41,7 +41,7 @@
     }
 </style>
 <div class="col-sm-3 col-sm-offset-9 cart-o">
-    <div id="cart" class="btn-group btn-block">
+    <div id="cart" class="btn-group btn-block" style="margin-left: 6%">
         <button type="button" data-toggle="dropdown" data-loading-text="Loading..." class="btn btn-inverse btn-block btn-lg dropdown-toggle drp">
             <i class="fa fa-shopping-cart"></i>
             <span id="cart-total">
@@ -50,14 +50,14 @@
                     echo count($_SESSION['cart']);
                 else
                     echo "0";
-                ?> item(s) - <?= isset($_SESSION['price']) ? number_format($_SESSION['price'],0) : 0 ?> VND
+                ?> sản phẩm - <?= isset($_SESSION['price']) ? number_format($_SESSION['price'],0) : 0 ?> VND
             </span>
         </button>
         <ul class="dropdown-menu pull-right dm">
             <?php
             if (!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
                 echo "<li>
-                        <p class='text-center'>Your shopping cart is empty!</p>
+                        <p class='text-center'>Giỏ hàng đang trống!</p>
                      </li>";
                 ?>
             <?php } else { ?> 
@@ -83,7 +83,7 @@
                                     <td class="text-right"><?= $row['quantity'] ?></td>
                                     <td class="text-right"><?= number_format($row['quantity'] * $row['price'],0) ?> VND</td>
                                     <td class="text-center">
-                                        <a type="button" onclick="return confirm('Do you want delete this cart?');" href="<?= ROOT_PATH ?>en/cart/deletecart/index/<?= $row['id']; ?>" title="Remove" class="btn btn-danger btn-xs btn-delete">
+                                        <a type="button" onclick="return confirm('Bạn có muốn xoá sản phẩm này khỏi giỏ hàng?');" href="<?= ROOT_PATH ?>vn/cart/deletecart/index/<?= $row['id']; ?>" title="Remove" class="btn btn-danger btn-xs btn-delete">
                                             <i class="fa fa-times"></i>
                                         </a>
                                     </td>
@@ -98,18 +98,18 @@
                         <table class="table table-bordered">
                             <tbody>
                                 <tr>
-                                    <td class="text-right"><strong>Total</strong></td>
+                                    <td class="text-right"><strong>Tổng</strong></td>
                                     <td class="text-right"><?= number_format($_SESSION['price'],0) ?> VND</td>
                                 </tr>
                             </tbody>
                         </table>
                         <p class="tx">
-                            <a href="<?= ROOT_PATH ?>en/cart/viewcart">
-                                <strong><i class="fa fa-shopping-cart"></i> View Cart</strong>
+                            <a href="<?= ROOT_PATH ?>vn/cart/viewcart">
+                                <strong><i class="fa fa-shopping-cart"></i> Xem giỏ</strong>
                             </a>
                             &nbsp;&nbsp;&nbsp;
-                            <a href="<?= ROOT_PATH ?>en/cart/checkout">
-                                <strong><i class="fa fa-share"></i> Checkout</strong>
+                            <a href="<?= ROOT_PATH ?>vn/cart/checkout">
+                                <strong><i class="fa fa-share"></i> Đặt hàng</strong>
                             </a>
                         </p>
                     </div>

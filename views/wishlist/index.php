@@ -8,21 +8,21 @@
             <div class="container">
                 <div class="breadcrumbs">
                     <ol class="breadcrumb">
-                        <li><a href="#">Home</a></li>
-                        <li class="active">WishList</li>
+                        <li><a href="#">Trang chủ</a></li>
+                        <li class="active">Quan tâm</li>
                     </ol>
                 </div>
                 <div class="table-responsive cart_info">
                     <table class="table table-condensed">
                         <thead>
                             <tr class="cart_menu">
-                                <td class="image">Item</td>
-                                <td class="description">Name</td>
+                                <td class="image">Ảnh</td>
+                                <td class="description">Tên</td>
                                 <td class="price">Model</td>
-                                <td class="price">Price</td>
-                                <td>Add To Cart</td>
-                                <td>Status</td>
-                                <td>Action</td>
+                                <td class="price">Đơn giá</td>
+                                <td>Thêm vào giỏ</td>
+                                <td>Trạng thái</td>
+                                <td>Hành động</td>
                             </tr>
                         </thead>
                         <tbody>
@@ -49,7 +49,7 @@
                                         </td>
                                         <td class="cart_price">
                                             <?php if ($row['Status'] !== 1 || $row['Status'] !== 2) { ?>
-                                                <a href="<?= ROOT_PATH ?>en/cart/addtocart/<?= $row['IDProduct'] ?>/<?= $row['IDWishlist'] ?>" title="Add To Cart" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i></a>
+                                                <a href="<?= ROOT_PATH ?>vn/cart/addtocart/<?= $row['IDProduct'] ?>/<?= $row['IDWishlist'] ?>" title="Thêm vào giỏ" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i></a>
                                             <?php
                                             } elseif($row['Status'] == 0) {
                                                 echo "<i class='fa fa-check'></i>";
@@ -59,15 +59,15 @@
                                         <td class="cart_status">
                                             <p><?php
                                                 if ($row['Status'] == 0 | $row['Status'] == null)
-                                                    echo "<span class='label label-default'>Unpaid</span>";
+                                                    echo "<span class='label label-default'>Chưa thanh toán</span>";
                                                 elseif ($row['Status'] == 1)
-                                                    echo "<span class='label label-primary'>Cart</span>";
+                                                    echo "<span class='label label-primary'>Trong giỏ</span>";
                                                 elseif ($row['Status'] == 2)
-                                                    echo "<span class='label label-success'>Puschased</span>";
+                                                    echo "<span class='label label-success'>Đã thanh toán</span>";
                                                 ?></p>
                                         </td>
                                         <td class="cart_delete">
-                                            <a type="button" onclick="return confirm('Do you want delete this cart?');" href="<?= ROOT_PATH ?>en/wishlist/delete/<?= $row['IDWishlist']; ?>" title="Remove" class="btn btn-danger btn-xs btn-delete">
+                                            <a type="button" onclick="return confirm('Bạn có muốn bỏ quan tâm sản phẩm này?');" href="<?= ROOT_PATH ?>vn/wishlist/delete/<?= $row['IDWishlist']; ?>" title="Xoá" class="btn btn-danger btn-xs btn-delete">
                                                 <i class="fa fa-times"></i>
                                             </a>
                                         </td>

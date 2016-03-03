@@ -1,4 +1,4 @@
-<h2>Category</h2>
+<h2>Tin tức</h2>
 
 <div class="panel-group category-products" id="accordian2">
     <div class="panel panel-default">

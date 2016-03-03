@@ -95,19 +95,19 @@
                 <div class="col-sm-6">
                     <div class="contactinfo">
                         <ul class="nav nav-pills">
-                            <li><a href="#"><i class="fa fa-phone"></i> +2 95 01 88 821</a></li>
-                            <li><a href="#"><i class="fa fa-envelope"></i> info@domain.com</a></li>
+                            <li><a href="#"><i class="fa fa-phone"></i> +84 1655251141</a></li>
+                            <li><a href="#"><i class="fa fa-envelope"></i> thanhnt115@gmail.com</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-sm-6">
                     <div class="social-icons pull-right">
                         <ul class="nav navbar-nav">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="https://www.facebook.com/brucelee.thanh"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/ThanhBrucelee"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="https://www.linkedin.com/in/brucelee-thanh-1b3516112?trk=hp-identity-name"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="https://www.facebook.com/brucelee.thanh"><i class="fa fa-dribbble"></i></a></li>
+                            <li><a href="https://plus.google.com/106747159058088176140/posts"><i class="fa fa-google-plus"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -169,7 +169,7 @@
                     <div class="col-sm-3">
                         <div class="right-inner-addon">
                             <i class="icon-search"></i>
-                            <input type="search" name="search" class="form-control" placeholder="Search" />
+                            <input type="search" name="search" class="form-control" placeholder="Tìm kiếm" />
                         </div>
                     </div><!-- /.col-sm-3 -->
                 </form>
@@ -181,7 +181,7 @@
 <form  method="post" action="">
     <div id="modal" class="popupContainer" style="display:none;">
         <header class="popupHeader">
-            <span class="header_title">Login</span>
+            <span class="header_title">Đăng nhập</span>
             <span class="modal_close"><i class="fa fa-times"></i></span>
         </header>
 
@@ -191,7 +191,7 @@
                 <div class="">
                     <a href="#" class="social_box fb">
                         <span class="icon"><i class="fa fa-facebook"></i></span>
-                        <span class="icon_title">Connect with Facebook</span>
+                        <span class="icon_title">Đăng nhập Facebook</span>
                         <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
                         </fb:login-button>
 
@@ -201,17 +201,17 @@
 
                     <a href="#" class="social_box google">
                         <span class="icon"><i class="fa fa-google-plus"></i></span>
-                        <span class="icon_title">Connect with Google</span>
+                        <span class="icon_title">Đăng nhập Google</span>
                     </a>
                 </div>
 
                 <div class="centeredText">
-                    <span>Or use your Email address</span>
+                    <span>Đăng nhập bằng tài khoản hoặc email</span>
                 </div>
 
                 <div class="action_btns">
-                    <div class="one_half"><a href="#" id="login_form" class="btn">Login</a></div>
-                    <div class="one_half last"><a href="#" id="register_form" class="btn">Sign up</a></div>
+                    <div class="one_half"><a href="#" id="login_form" class="btn">Đăng nhập</a></div>
+                    <div class="one_half last"><a href="#" id="register_form" class="btn">Đăng ký</a></div>
                 </div>
             </div>
             <!-- Login form -->
@@ -239,7 +239,7 @@
         $("#register_form").click(function () {
             $(".social_login").hide();
             $(".user_register").show();
-            $(".header_title").text('Register');
+            $(".header_title").text('Đăng ký');
             return true;
         });
 
@@ -248,7 +248,7 @@
             $(".user_login").hide();
             $(".user_register").hide();
             $(".social_login").show();
-            $(".header_title").text('Login');
+            $(".header_title").text('Đăng nhập');
             return true;
         });
 

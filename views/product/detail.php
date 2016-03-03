@@ -58,11 +58,11 @@
                             <span>
                                 <span><?= number_format($this->data['product'][0]['UnitPrice'], 0) ?> VND</span>
                                 <br/>
-                                <a href="<?= ROOT_PATH ?>en/cart/addtocart/<?= $this->data['product'][0]['IDProduct'] ?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                <a href="<?= ROOT_PATH ?>vn/cart/addtocart/<?= $this->data['product'][0]['IDProduct'] ?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ</a>
                             </span>
-                            <p><b>Availability:</b> In Stock</p>
-                            <p><b>Condition:</b> New</p>
-                            <p><b>Brand:</b> Bánh Kẹo Tràng An</p>
+                            <p><b>Sẵn có:</b> Còn trong kho</p>
+                            <p><b>Tình trạng:</b> Mới</p>
+                            <p><b>Thương hiệu:</b> Bánh Kẹo Tràng An</p>
                             <a href=""><img src="<?= WEBROOT_PATH . DS ?>images/product-details/share.png" class="share img-responsive"  alt="" /></a>
                         </div><!--/product-information-->
                     </div>
@@ -72,7 +72,7 @@
                     <div class="col-sm-12">
                         <ul class="nav nav-tabs">
                             <li><a href="#tag" data-toggle="tab">Tag</a></li>
-                            <li class="active"><a href="#reviews" data-toggle="tab">Reviews</a></li>
+                            <li class="active"><a href="#reviews" data-toggle="tab">Đánh giá</a></li>
                         </ul>
                     </div>
                     <div class="tab-content">
@@ -91,10 +91,10 @@
                                 <ul>
                                     <li><a href=""><i class="fa fa-user"></i>EUGEN</a></li>
                                     <li><a href=""><i class="fa fa-clock-o"></i>12:41 PM</a></li>
-                                    <li><a href=""><i class="fa fa-calendar-o"></i>12 Fer 2016</a></li>
+                                    <li><a href=""><i class="fa fa-calendar-o"></i>12 Feb 2016</a></li>
                                 </ul>
                                 <p><?= $this->data['product'][0]['Description'] ?></p> <br/>
-                                <p><b>Write Your Review</b></p> <br/>
+                                <p><b>Bình luận</b></p> <br/>
 
                                 <form action="#">
                                     <span>
@@ -102,9 +102,9 @@
                                         <input style="background-color: white;" type="email" placeholder="Email Address"/>
                                     </span>
                                     <textarea name="text-comment" style="background-color: white;"></textarea>
-                                    <b>Rating: </b> <img src="<?= WEBROOT_PATH . DS ?>images/product-details/rating.png" alt="" />
+                                    <b>Đánh giá: </b> <img src="<?= WEBROOT_PATH . DS ?>images/product-details/rating.png" alt="" />
                                     <button type="button" class="btn btn-default pull-right">
-                                        Submit
+                                        Gửi
                                     </button>
                                 </form>
                             </div>
@@ -114,7 +114,7 @@
                 </div><!--/category-tab-->
 
                 <div class="recommended_items"><!--recommended_items-->
-                    <h2 class="title text-center">recommended items</h2>
+                    <h2 class="title text-center">Đề xuất</h2>
 
                     <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
 
@@ -135,7 +135,7 @@
                                                     <img class="recommend-img" src="<?= WEBROOT_PATH ?>/img/upload/<?= $this->data['recommend'][$i]['Image'] ?>" alt="" />
                                                     <h2>$<?= $this->data['recommend'][$i]['UnitPrice'] ?></h2>
                                                     <p><?= $this->data['recommend'][$i]['Name'] ?></p>
-                                                    <a href="<?= ROOT_PATH ?>en/cart/addtocart/<?= $item['IDProduct'] ?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                                    <a href="<?= ROOT_PATH ?>vn/cart/addtocart/<?= $item['IDProduct'] ?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -148,7 +148,7 @@
                                                     <img class="recommend-img" src="<?= WEBROOT_PATH ?>/img/upload/<?= $this->data['recommend'][$i]['Image'] ?>" alt="" />
                                                     <h2>$<?= $this->data['recommend'][$i]['UnitPrice'] ?></h2>
                                                     <p><?= $this->data['recommend'][$i]['Name'] ?></p>
-                                                    <a href="<?= ROOT_PATH ?>en/cart/addtocart/<?= $item['IDProduct'] ?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                                    <a href="<?= ROOT_PATH ?>vn/cart/addtocart/<?= $item['IDProduct'] ?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -161,7 +161,7 @@
                                                     <img class="recommend-img" src="<?= WEBROOT_PATH ?>/img/upload/<?= $this->data['recommend'][$i]['Image'] ?>" alt="" />
                                                     <h2>$<?= $this->data['recommend'][$i]['UnitPrice'] ?></h2>
                                                     <p><?= $this->data['recommend'][$i]['Name'] ?></p>
-                                                    <a href="<?= ROOT_PATH ?>en/cart/addtocart/<?= $item['IDProduct'] ?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                                    <a href="<?= ROOT_PATH ?>vn/cart/addtocart/<?= $item['IDProduct'] ?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ</a>
                                                 </div>
                                             </div>
                                         </div>

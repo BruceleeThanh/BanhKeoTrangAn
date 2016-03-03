@@ -7,24 +7,24 @@
             <div class="container">
                 <div class="breadcrumbs">
                     <ol class="breadcrumb">
-                        <li><a href="#">Home</a></li>
-                        <li class="active">Check out</li>
+                        <li><a href="#">Trang chủ</a></li>
+                        <li class="active">Đặt hàng</li>
                     </ol>
                 </div><!--/breadcrums-->
 
                 <div class="step-one">
-                    <h2 class="heading">Step1>Review</h2>
+                    <h2 class="heading">Bước 1 > Xem giỏ</h2>
                 </div>
                 <div class="table-responsive cart_info">
                     <table class="table table-condensed">
                         <thead>
                             <tr class="cart_menu">
-                                <td class="image">Item</td>
-                                <td class="description">Description</td>
-                                <td class="price">Price</td>
-                                <td class="quantity">Quantity</td>
-                                <td class="total">Total</td>
-                                <td>Action</td>
+                                <td class="image">Sản phẩm</td>
+                                <td class="description">Mô tả</td>
+                                <td class="price">Đơn giá</td>
+                                <td class="quantity">Số lượng</td>
+                                <td class="total">Thành tiền</td>
+                                <td>Hành động</td>
                             </tr>
                         </thead>
                         <tbody>
@@ -55,7 +55,7 @@
                                             <p class="cart_total_price"><?= number_format($row['price'] * $row['quantity'], 0) ?> VND</p>
                                         </td>
                                         <td class="cart_delete">
-                                            <a type="button" onclick="return confirm('Do you want delete this cart?');" href="<?= ROOT_PATH ?>en/cart/deletecart/viewcart/<?= $row['id']; ?>" title="Remove" class="btn btn-danger btn-xs btn-delete">
+                                            <a type="button" onclick="return confirm('Bạn có muốn xoá sản phẩm này khỏi giỏ hàng?');" href="<?= ROOT_PATH ?>vn/cart/deletecart/viewcart/<?= $row['id']; ?>" title="Xoá" class="btn btn-danger btn-xs btn-delete">
                                                 <i class="fa fa-times"></i>
                                             </a>
                                         </td>
@@ -69,20 +69,20 @@
                                 <td colspan="2">
                                     <table class="table table-condensed total-result">
                                         <tr>
-                                            <td>Cart Sub Total</td>
+                                            <td>Trước thuế</td>
                                             <td><?= isset($_SESSION['price']) ? number_format($_SESSION['price'], 0) : "0" ?> VND</td>
                                         </tr>
                                         <tr>
-                                            <td>Exo Tax</td>
+                                            <td>Thuế</td>
                                             <td><?= isset($_SESSION['price']) ? number_format($tax = $_SESSION['price'] * 5 / 100, 0) : "0" ?> VND</td>
                                         </tr>
                                         <tr class="shipping-cost">
-                                            <td>Shipping Cost</td>
-                                            <td>Free</td>
+                                            <td>Phí giao hàng</td>
+                                            <td>Miễn phí</td>
 
                                         </tr>
                                         <tr>
-                                            <td>Total</td>
+                                            <td>Tổng</td>
                                             <?php if (isset($_SESSION['price'])) { ?>
                                                 <td><span><?php
                                                         $tax = 0;
@@ -105,14 +105,14 @@
                     </table>
                 </div>
                 <div class="step-one">
-                    <h2 class="heading">Step2>Fill Information</h2>
+                    <h2 class="heading">Bước 2 > Thông tin giao nhận</h2>
                 </div>
                 <form method="get" name="input" >
                     <div class="shopper-informations">
                         <div class="row">
                             <div class="col-sm-3">
                                 <div class="shopper-info">
-                                    <p>Shopper Information</p>
+                                    <p>Thông tin người nhận</p>
                                     <form>
                                         <?php $customer = $this->data['customer']; ?>
                                         <input type="text" readonly placeholder="<?php
@@ -140,50 +140,46 @@
                                             echo 'PhoneNumber';
                                         ?>">
                                     </form>
-                                    <a class="btn btn-primary" href="#">Get Quotes</a>
-                                    <button class="btn-con" type="submit" name="continue" id="btn1"   value="continue"><a class="btn btn-primary" id="link" href="<?= ROOT_PATH ?>en/payment/creditcard">Continue</a></button>
+                                        <a class="btn btn-primary" href="#">Nhận báo giá</a>
+                                    <button class="btn-con" type="submit" name="continue" id="btn1"   value="continue"><a class="btn btn-primary" id="link" href="<?= ROOT_PATH ?>vn/payment/creditcard">Thanh toán</a></button>
                                 </div>
                             </div>
                             <div class="col-sm-5 clearfix">
                                 <div class="bill-to">
-                                    <p>Bill To</p>
+                                    <p>Nơi nhận</p>
                                     <div class="form-one">
                                         <form method="get">
-                                            <input type="text" placeholder="Company Name">
-                                            <input type="text" onchange="changeFirstName()" name="firstname" required placeholder="First Name *">
-                                            <input type="text" placeholder="Middle Name">
-                                            <input type="text" onchange="changeLastName()" name="lastname" required placeholder="Last Name *">
+                                            <input type="text" placeholder="Tên công ty">
+                                            <input type="text" onchange="changeFirstName()" name="firstname" required placeholder="Họ *">
+                                            <input type="text" placeholder="Tên đệm">
+                                            <input type="text" onchange="changeLastName()" name="lastname" required placeholder="Tên *">
                                             <input type="text" onchange="changeEmail()" name="email1" required placeholder="Email 1 *">
                                             <input type="text" placeholder="Email 2">
                                         </form>
                                     </div>
                                     <div class="form-two">
                                         <form>
-                                            <input type="text" placeholder="Zip / Postal Code *">
+                                            <input type="text" placeholder="Mã bưu chính *">
                                             <select>
-                                                <option>-- Country --</option>
+                                                <option>-- Quốc gia --</option>
                                                 <option>United States</option>
-                                                <option>Bangladesh</option>
                                                 <option>UK</option>
-                                                <option>India</option>
-                                                <option>Pakistan</option>
-                                                <option>Ucrane</option>
-                                                <option>Canada</option>
-                                                <option>Dubai</option>
+                                                <option>VietNam</option>
                                             </select>
                                             <select>
-                                                <option>-- State / Province / Region --</option>
-                                                <option>United States</option>
-                                                <option>Bangladesh</option>
-                                                <option>UK</option>
-                                                <option>India</option>
-                                                <option>Pakistan</option>
-                                                <option>Ucrane</option>
-                                                <option>Canada</option>
-                                                <option>Dubai</option>
+                                                <option>-- Tỉnh thành --</option>
+                                                <option>Las vegas</option>
+                                                <option>Washington</option>
+                                                <option>New York</option>
+                                                <option>Lon don</option>
+                                                <option>Manchester</option>
+                                                <option>Edinburgh</option>
+                                                <option>Hà Nội</option>
+                                                <option>Đà Nắng</option>
+                                                <option>TP. HCM</option>
                                             </select>
-                                            <input type="text" onchange="changePhoneNumber()" name="phonenumber" placeholder="Phone *">
-                                            <input type="text" placeholder="Mobile Phone">
+                                            <input type="text" onchange="changePhoneNumber()" name="phonenumber" placeholder="Số điện thoại *">
+                                            <input type="text" placeholder="Di động">
                                             <input type="text" placeholder="Fax">
                                         </form>
                                     </div>
@@ -191,8 +187,8 @@
                             </div>
                             <div class="col-sm-4">
                                 <div class="order-message">
-                                    <p>Shipping Order</p>
-                                    <textarea name="message" id="message"  placeholder="Notes about your order, Special Notes for Delivery" rows="16"></textarea>
+                                    <p>Ghi chú</p>
+                                    <textarea name="message" id="message"  placeholder="Ghi chú khi giao hàng!" rows="16"></textarea>
 
                                 </div>	
                             </div>
@@ -213,7 +209,7 @@
                 var email = $('input[name="email1"]').val();
                 var phonenumber = $('input[name="phonenumber"]').val();
                 var message = $('textarea#message').val();
-                var data = '<?= ROOT_PATH ?>en/payment/creditcard?firstname=' + firstname + '&lastname=' + lastname + '&email=' + email + '&phonenumber=' + phonenumber + '&address=' + message;
+                var data = '<?= ROOT_PATH ?>vn/payment/creditcard?firstname=' + firstname + '&lastname=' + lastname + '&email=' + email + '&phonenumber=' + phonenumber + '&address=' + message;
                 $('#link').attr('href', data);
             });
         </script>

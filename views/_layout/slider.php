@@ -44,7 +44,7 @@
                                     <h1 style="font-family: Segoe UI Light !important;"><span><?= $row['Title']; ?></span></h1>
                                     <h2><?= $row['Header']; ?></h2>
                                     <p><?= $row['Content']; ?></p>
-                                    <button onclick="location.href = '<?= ROOT_PATH . $row['Link']; ?>';" type="button" id="btn-getitnow" class="btn btn-default get-it-now">Get it now</button>
+                                    <button onclick="location.href = '<?= ROOT_PATH . $row['Link']; ?>';" type="button" id="btn-getitnow" class="btn btn-default get-it-now">Xem ngay</button>
                                 </div>
                                 <div class="col-sm-6">
                                     <img  class="slider-image" src="<?= WEBROOT_PATH?>/img/upload/<?= $row['Image'] ?>" class="girl img-responsive" alt="" />

@@ -17,7 +17,7 @@
 
             <div class="col-sm-9">
                 <div class="blog-post-area">
-                    <h2 class="title text-center">Latest From our Blog</h2>
+                    <h2 class="title text-center">Tin mới</h2>
                     <?php foreach ($this->data['lstPosts'] as $key => $row) {
                         ?>
                         <div class="single-blog-post" style="margin-top: 100px;margin-bottom: 100px;">
@@ -39,7 +39,7 @@
                                 <img src="<?= WEBROOT_PATH ?>/img/upload/<?= $row['Image'] ?>" alt="" style="width: 900px;height: 450px;">
                             </a>
                             <p><?= substr($row['Content'], 0, 1000) ?></p>
-                            <a  class="btn btn-primary" href="<?=ROOT_PATH ?>en/post/detail/<?=$row['Slug'] ?>-<?=$row['IDPost'] ?>">Read More</a>
+                            <a  class="btn btn-primary" href="<?=ROOT_PATH ?>vn/post/detail/<?=$row['Slug'] ?>-<?=$row['IDPost'] ?>">Chi tiết</a>
                         </div>
                     <?php } ?>
                     <div class="c-gray-box center">

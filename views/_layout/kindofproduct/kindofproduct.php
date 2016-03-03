@@ -1,4 +1,4 @@
-<h2>Kind Of Product</h2>
+<h2>sản phẩm</h2>
 
 <div class="panel-group category-products" id="accordian">
     <div class="panel panel-default">
@@ -17,7 +17,7 @@
                 <div class="panel-body">
                     <ul>
                         <?php foreach ($item['children'] as $row) { ?>
-                        <li><a href="<?= ROOT_PATH?>en/product/kindofproduct/<?= $row['Slug']?>/page/1"><?= $row['Name']; ?></a></li>
+                        <li><a href="<?= ROOT_PATH?>vn/product/kindofproduct/<?= $row['Slug']?>/page/1"><?= $row['Name']; ?></a></li>
                         <?php } ?>
                     </ul>
                 </div>

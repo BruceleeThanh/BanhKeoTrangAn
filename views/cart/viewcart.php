@@ -7,20 +7,20 @@
             <div class="container">
                 <div class="breadcrumbs">
                     <ol class="breadcrumb">
-                        <li><a href="#">Home</a></li>
-                        <li class="active">Shopping Cart</li>
+                        <li><a href="#">Trang chủ</a></li>
+                        <li class="active">Giỏ hàng</li>
                     </ol>
                 </div>
                 <div class="table-responsive cart_info">
                     <table class="table table-condensed">
                         <thead>
                             <tr class="cart_menu">
-                                <td class="image">Item</td>
-                                <td class="description">Description</td>
-                                <td class="price">Price</td>
-                                <td class="quantity">Quantity</td>
-                                <td class="total">Total</td>
-                                <td>Action</td>
+                                <td class="image">Sản phẩm</td>
+                                <td class="description">Mô tả</td>
+                                <td class="price">Đơn giá</td>
+                                <td class="quantity">Số lượng</td>
+                                <td class="total">Thành tiền</td>
+                                <td>Hành động</td>
                             </tr>
                         </thead>
                         <tbody>
@@ -51,7 +51,7 @@
                                             <p class="cart_total_price"><?= number_format($row['price'] * $row['quantity'], 0) ?> VND</p>
                                         </td>
                                         <td class="cart_delete">
-                                            <a type="button" onclick="return confirm('Do you want delete this cart?');" href="<?= ROOT_PATH ?>en/cart/deletecart/viewcart/<?= $row['id']; ?>" title="Remove" class="btn btn-danger btn-xs btn-delete">
+                                            <a type="button" onclick="return confirm('Bạn có muốn xoá sản phẩm này khỏi giỏ hàng?');" href="<?= ROOT_PATH ?>vn/cart/deletecart/viewcart/<?= $row['id']; ?>" title="Xoá" class="btn btn-danger btn-xs btn-delete">
                                                 <i class="fa fa-times"></i>
                                             </a>
                                         </td>
@@ -73,10 +73,10 @@
                         <div class="total_area">                   
                             <ul>
 
-                                <li>Cart Sub Total <span><?= isset($_SESSION['price']) ? number_format($_SESSION['price'], 0) : "0" ?> VND</span></li>
-                                <li>Eco Tax <span><?= isset($_SESSION['price']) ? number_format($tax = $_SESSION['price'] * 5 / 100, 0) : "0" ?> VND</span></li>
-                                <li>Shipping Cost <span>Free</span></li>
-                                <li>Total <span><?php
+                                <li>Trước thuế <span><?= isset($_SESSION['price']) ? number_format($_SESSION['price'], 0) : "0" ?> VND</span></li>
+                                <li>Thuế <span><?= isset($_SESSION['price']) ? number_format($tax = $_SESSION['price'] * 5 / 100, 0) : "0" ?> VND</span></li>
+                                <li>Phí giao hàng <span>Miễn phí</span></li>
+                                <li>Tổng <span><?php
                                         $tax = 0;
                                         if (isset($_SESSION['price'])) {
                                             $price = $_SESSION['price'];
@@ -90,7 +90,7 @@
                                 </li>
 
                             </ul>
-                            <a class="btn btn-default check_out" href="<?= ROOT_PATH ?>en/cart/checkout">Check Out</a>
+                            <a class="btn btn-default check_out" href="<?= ROOT_PATH ?>vn/cart/checkout">Check Out</a>
                         </div>
                     </div>
                 </div>

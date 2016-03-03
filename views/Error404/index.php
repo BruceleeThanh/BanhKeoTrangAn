@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Home | Bánh Kẹo Tràng An</title>
+    <title>Bánh Kẹo Tràng An</title>
     <link href="<?=WEBROOT_PATH ?>/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?=WEBROOT_PATH ?>/css/font-awesome.min.css" rel="stylesheet">
     <link href="<?=WEBROOT_PATH ?>/css/prettyPhoto.css" rel="stylesheet">
@@ -27,13 +27,13 @@
 <body>
 	<div class="container text-center">
 		<div class="logo-404">
-			<a href="<?=ROOT_PATH ?>"><img src="<?=WEBROOT_PATH ?>/images/home/logo.png" alt="" /></a>
+			<a href="<?=ROOT_PATH ?>"><img src="<?=WEBROOT_PATH ?>/img/logo/trang_an.jpg" alt="" style="width: 15%"/></a>
 		</div>
 		<div class="content-404">
-			<img src="<?=WEBROOT_PATH ?>/images/404/404.png" class="img-responsive" alt="" />
-			<h1><b>OPPS!</b> We Couldn’t Find this Page</h1>
-			<p>Uh... So it looks like you brock something. The page you are looking for has up and Vanished.</p>
-			<h2><a href="<?=ROOT_PATH ?>">Bring me back Home</a></h2>
+                    <img src="<?=WEBROOT_PATH ?>/images/404/404.png" class="img-responsive" alt="" style="width: 30%"/>
+			<h1><b>OPPS!</b> Không tìm thấy trang bạn yêu cầu</h1>
+			<p>Uh... Có thể thông tin bạn nhập không chính xác, hãy kiểm tra lại nhé!</p>
+			<h2><a href="<?=ROOT_PATH ?>">Trở về Trang chủ</a></h2>
 		</div>
 	</div>
 

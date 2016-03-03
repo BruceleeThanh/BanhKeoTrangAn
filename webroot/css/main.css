@@ -1390,8 +1390,8 @@ h2.title {
 *******404 CSS******
 **************************/
 
-.logo-404 {
-  margin-top: 60px;
+.logo-404{
+    margin-top: 10px;
 }
 
 .content-404 h1 {

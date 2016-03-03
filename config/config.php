@@ -11,7 +11,7 @@ Config::set('routes',array(
 
 Config::set('admin_route', 'admin');
 Config::set('default_route', 'default');
-Config::set('default_language', 'en');
+Config::set('default_language', 'vn');
 Config::set('default_controller', 'home');
 Config::set('default_action', 'index');
 

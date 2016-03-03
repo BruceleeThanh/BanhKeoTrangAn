@@ -1,5 +1,5 @@
 <div class="recommended_items"><!--recommended_items-->
-    <h2 class="title text-center">recommended items</h2>
+    <h2 class="title text-center">đề xuất</h2>
 
     <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
 
@@ -20,7 +20,7 @@
                                     <img class="recommend-img" src="<?= WEBROOT_PATH ?>/img/upload/<?= $this->data['recommend'][$i]['Image'] ?>" alt="" />
                                     <h2>$<?= $this->data['recommend'][$i]['UnitPrice'] ?></h2>
                                     <p><?= $this->data['recommend'][$i]['Name'] ?></p>
-                                    <a href="<?= ROOT_PATH ?>en/cart/addtocart/<?= $item['IDProduct'] ?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                    <a href="<?= ROOT_PATH ?>vn/cart/addtocart/<?= $item['IDProduct'] ?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ</a>
                                 </div>
                             </div>
                         </div>
@@ -33,7 +33,7 @@
                                     <img class="recommend-img" src="<?= WEBROOT_PATH ?>/img/upload/<?= $this->data['recommend'][$i]['Image'] ?>" alt="" />
                                     <h2>$<?= $this->data['recommend'][$i]['UnitPrice'] ?></h2>
                                     <p><?= $this->data['recommend'][$i]['Name'] ?></p>
-                                    <a href="<?= ROOT_PATH ?>en/cart/addtocart/<?= $item['IDProduct'] ?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                    <a href="<?= ROOT_PATH ?>vn/cart/addtocart/<?= $item['IDProduct'] ?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ</a>
                                 </div>
                             </div>
                         </div>
@@ -46,7 +46,7 @@
                                     <img class="recommend-img" src="<?= WEBROOT_PATH ?>/img/upload/<?= $this->data['recommend'][$i]['Image'] ?>" alt="" />
                                     <h2>$<?= $this->data['recommend'][$i]['UnitPrice'] ?></h2>
                                     <p><?= $this->data['recommend'][$i]['Name'] ?></p>
-                                    <a href="<?= ROOT_PATH ?>en/cart/addtocart/<?= $item['IDProduct'] ?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                    <a href="<?= ROOT_PATH ?>vn/cart/addtocart/<?= $item['IDProduct'] ?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ</a>
                                 </div>
                             </div>
                         </div>

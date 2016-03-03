@@ -4,8 +4,8 @@
                     <div class="row">
                         <div class="col-sm-2">
                             <div class="companyinfo">
-                                <h2><span>e</span>-shopper</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor</p>
+                                <h2><span>Tràng An</span></h2>
+                                <p>Tinh hoa bánh kẹo Việt</p>
                             </div>
                         </div>
                         <div class="col-sm-7">
@@ -19,8 +19,8 @@
                                             <i class="fa fa-play-circle-o"></i>
                                         </div>
                                     </a>
-                                    <p>Circle of Hands</p>
-                                    <h2>24 DEC 2014</h2>
+                                    <p>Sản phẩm của năm</p>
+                                    <h2>2013</h2>
                                 </div>
                             </div>
 
@@ -34,8 +34,8 @@
                                             <i class="fa fa-play-circle-o"></i>
                                         </div>
                                     </a>
-                                    <p>Circle of Hands</p>
-                                    <h2>24 DEC 2014</h2>
+                                    <p>Sản phẩm của năm</p>
+                                    <h2>2014</h2>
                                 </div>
                             </div>
 
@@ -49,8 +49,8 @@
                                             <i class="fa fa-play-circle-o"></i>
                                         </div>
                                     </a>
-                                    <p>Circle of Hands</p>
-                                    <h2>24 DEC 2014</h2>
+                                    <p>Sản phẩm của năm</p>
+                                    <h2>2015</h2>
                                 </div>
                             </div>
 
@@ -64,15 +64,15 @@
                                             <i class="fa fa-play-circle-o"></i>
                                         </div>
                                     </a>
-                                    <p>Circle of Hands</p>
-                                    <h2>24 DEC 2014</h2>
+                                    <p>Sản phẩm của năm</p>
+                                    <h2>2016</h2>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-3">
                             <div class="address">
                                 <img src="<?=WEBROOT_PATH ?>/images/home/map.png" alt="" />
-                                <p>505 S Atlantic Ave Virginia Beach, VA(Virginia)</p>
+                                <p>Nghiêm Xuân Yêm, Hoàng Mai, Hà Nội, Việt Nam</p>
                             </div>
                         </div>
                     </div>
@@ -84,59 +84,47 @@
                     <div class="row">
                         <div class="col-sm-2">
                             <div class="single-widget">
-                                <h2>Service</h2>
+                                <h2>Dịch vụ</h2>
                                 <ul class="nav nav-pills nav-stacked">
-                                    <li><a href="#">Online Help</a></li>
-                                    <li><a href="#">Contact Us</a></li>
-                                    <li><a href="#">Order Status</a></li>
-                                    <li><a href="#">Change Location</a></li>
+                                    <li><a href="#">Trợ giúp trực tuyến</a></li>
+                                    <li><a href="#">Liên hệ</a></li>
+                                    <li><a href="#">Trạng thái đơn hàng</a></li>
+                                    <li><a href="#">Thay đổi địa chỉ</a></li>
                                     <li><a href="#">FAQ’s</a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="col-sm-2">
                             <div class="single-widget">
-                                <h2>Quock Shop</h2>
+                                <h2>Chính sách</h2>
                                 <ul class="nav nav-pills nav-stacked">
-                                    <li><a href="#">T-Shirt</a></li>
-                                    <li><a href="#">Mens</a></li>
-                                    <li><a href="#">Womens</a></li>
-                                    <li><a href="#">Gift Cards</a></li>
-                                    <li><a href="#">Shoes</a></li>
+                                    <li><a href="#">Điều khoản sử dụng</a></li>
+                                    <li><a href="#">Chính sách riêng tư</a></li>
+                                    <li><a href="#">Chính sách đổi trả</a></li>
+                                    <li><a href="#">Hệ thống thanh toán</a></li>
+                                    <li><a href="#">Hệ thống thương hiệu</a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="col-sm-2">
                             <div class="single-widget">
-                                <h2>Policies</h2>
+                                <h2>Thông tin chung</h2>
                                 <ul class="nav nav-pills nav-stacked">
-                                    <li><a href="#">Terms of Use</a></li>
-                                    <li><a href="#">Privecy Policy</a></li>
-                                    <li><a href="#">Refund Policy</a></li>
-                                    <li><a href="#">Billing System</a></li>
-                                    <li><a href="#">Ticket System</a></li>
+                                    <li><a href="#">Thông tin công ty</a></li>
+                                    <li><a href="#">Tuyển dụng</a></li>
+                                    <li><a href="#">Kho hàng</a></li>
+                                    <li><a href="#">Chi nhánh</a></li>
+                                    <li><a href="#">Bản quyền</a></li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-sm-2">
+                        <div class="col-sm-3 col-sm-offset-3">
                             <div class="single-widget">
-                                <h2>About Shopper</h2>
-                                <ul class="nav nav-pills nav-stacked">
-                                    <li><a href="#">Company Information</a></li>
-                                    <li><a href="#">Careers</a></li>
-                                    <li><a href="#">Store Location</a></li>
-                                    <li><a href="#">Affillate Program</a></li>
-                                    <li><a href="#">Copyright</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-sm-3 col-sm-offset-1">
-                            <div class="single-widget">
-                                <h2>About Shopper</h2>
+                                <h2>Nhận thông báo</h2>
                                 <form action="#" class="searchform">
-                                    <input type="text" placeholder="Your email address" />
-                                    
-                                    <p>Get the most recent updates from <br />our site and be updated your self...</p>
+                                    <input type="text" placeholder="Nhập email của bạn" />
+                                    <button type="submit" class="btn btn-default" style="height: 33px;"><i class="fa fa-play-circle-o"></i></button>
+                                    <p>Nhận thông tin khuyến mại hấp dẫn<br />và các ưu đãi, hậu mãi của chúng tôi. . .</p>
                                 </form>
                             </div>
                         </div>
@@ -148,8 +136,8 @@
             <div class="footer-bottom">
                 <div class="container">
                     <div class="row">
-                        <p class="pull-left">Copyright © 2016 E-SHOPPER Inc. All rights reserved.</p>
-                        <p class="pull-right">Designed by <span><a target="_blank" href="http://www.themeum.com">Themeum</a></span></p>
+                        <p class="pull-left">Bản quyền © 2016 Công ty cổ phần bánh kẹo Tràng An. Mọi quyền được bảo lưu.</p>
+                        <p class="pull-right">Thiết kế web <span><a target="_blank" href="http://www.themeum.com">TLU-PHP</a></span></p>
                     </div>
                 </div>
             </div>
