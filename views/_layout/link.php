@@ -7,6 +7,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
         <title><?php echo Session::get('site_name'); ?></title>
+        <link rel="icon" href="<?= WEBROOT_PATH ?>/img/icon/icon.png" title="Banh Keo Trang An">
         <link href="<?= WEBROOT_PATH ?>/css/bootstrap.min.css" rel="stylesheet">
         <link href="<?= WEBROOT_PATH ?>/css/font-awesome.min.css" rel="stylesheet">
         <link href="<?= WEBROOT_PATH ?>/css/font-awesome.css" rel="stylesheet">

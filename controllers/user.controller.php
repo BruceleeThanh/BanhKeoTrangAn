@@ -176,5 +176,7 @@ class UserController extends Controller {
     public function login($data) {
         return $this->model->getByLogin($data);
     }
-
+    public function profile(){
+        //code
+    }
 }
