@@ -127,6 +127,7 @@ class HomeController extends Controller {
             );
             $userController = new UserController();
             $isAdded = $userController->register($data, $r);
+            
             if ($isAdded) {
                 Router::redirect(ROOT_PATH);
             }
