@@ -2,8 +2,10 @@
 
 Đề tài: Xây dựng website giới thiệu và bán sản phẩm cho công ty bánh kẹo Tràng An.
 Các bước cài đặt:
+
 **Bước 1:**
 -	Tạo database trong Phpmyadmin sau đó import file banhkeotrangan.sql vào database vừa tạo để tự động tạo ra Cơ sở dữ liệu.
+
 **Bước 2:**
 -	Giải nén file BanhKeoTrangAn.rar  vào thư mục htdocs của Xampp hoặc vào thư mục root trên host
 
